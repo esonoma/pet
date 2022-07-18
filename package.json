@@ -1,0 +1,63 @@
+{
+  "name": "shop",
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=8.0.0",
+    "pnpm": ">=5.0.0"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "dev:app": "uni -p app",
+    "dev:custom": "uni -p",
+    "dev:h5": "uni",
+    "dev:h5:ssr": "uni --ssr",
+    "dev:mp-weixin": "uni -p mp-weixin",
+    "build:app": "uni build -p app",
+    "build:custom": "uni build -p",
+    "build:h5": "uni build",
+    "build:h5:ssr": "uni build --ssr",
+    "build:mp-weixin": "uni build -p mp-weixin",
+    "lint": "pnpm lint:eslint && pnpm lint:stylelint",
+    "lint:fix": "pnpm lint:eslint --fix && pnpm lint:stylelint --fix",
+    "lint:eslint": "eslint --ext .js,.vue,.tsx,.jsx,.ts src",
+    "lint:stylelint": "stylelint '**/*.{css,scss,sass,less,stylus}'"
+  },
+  "lint-staged": {
+    "*.{js,vue,tsx,jsx,ts}": "pnpm lint:eslint --fix",
+    "*.{css,scss,sass,less,stylus}": "pnpm lint:stylelint --fix"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-alpha-3040820220424001",
+    "@dcloudio/uni-app-plus": "3.0.0-alpha-3040820220424001",
+    "@dcloudio/uni-components": "3.0.0-alpha-3040820220424001",
+    "@dcloudio/uni-h5": "3.0.0-alpha-3040820220424001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3040820220424001",
+    "pinia": "^2.0.16",
+    "vue": "^3.2.37",
+    "vue-i18n": "^9.1.9"
+  },
+  "devDependencies": {
+    "@dcloudio/types": "^3.0.7",
+    "@dcloudio/uni-automator": "3.0.0-alpha-3040820220424001",
+    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3040820220424001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3040820220424001",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-standard-scss": "^5.0.0",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.14"
+  }
+}

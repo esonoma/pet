@@ -31,5 +31,6 @@ module.exports = {
 
     // 在不同目录下会存在同名的组件，这里允许重名
     "vue/multi-word-component-names": "off",
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
   },
 };
