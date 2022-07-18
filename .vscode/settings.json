@@ -7,5 +7,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 }
