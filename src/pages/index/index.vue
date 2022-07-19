@@ -1,4 +1,7 @@
 <template>
+  <view>
+    <text> {{ $t("message.welcome") }} </text>
+  </view>
   <view class="content">
     <view class="text-area">
       <text class="title"> {{ login.username }}</text>

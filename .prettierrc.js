@@ -3,6 +3,7 @@ module.exports = {
   singleQuote: false,
   trailingComma: "all",
   semi: true,
-  endOfLine: "lf",
+  // endOfLine: "lf",
   bracketSpacing: true,
+  tabWidth: 2,
 };
