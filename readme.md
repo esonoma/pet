@@ -15,3 +15,8 @@
 - commitlint
 - pnpm: packagemanager
 - vite: build tool
+
+### Contributions
+
+- Contribute code: `github flow`
+- Unified code merge using `git rebase`
