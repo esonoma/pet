@@ -7,5 +7,5 @@ m=checkout master
 p=pull
 pr="! git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD);"
 al=add --all
-c="! git commit -m $0"
+c=commit -m
 s=status
