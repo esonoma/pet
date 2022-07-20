@@ -1,5 +1,5 @@
-export const LOCALE_NAME = "EN_US";
-export const LOCALE = {
+export const name = "EN_US";
+export const locale = {
     message: {
         welcome: 'Welcome',
     }
