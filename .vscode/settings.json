@@ -10,5 +10,9 @@
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
-  }
+  },
+
+  "html.autoClosingTags": true, // auto close tags
+  "html.autoCreateQuotes": true,
+  "editor.linkedEditing": true // auto rename linked tags
 }
