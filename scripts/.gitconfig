@@ -1,5 +1,11 @@
 #! /bin/bash
 
 [alias]
-lg=log
-test="! echo 'test'"
+l=log
+rl=reflog
+m=checkout master
+p=pull
+pr="! git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD);"
+al=add --all
+c="! git commit -m $0"
+s=status
