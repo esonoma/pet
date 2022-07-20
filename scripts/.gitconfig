@@ -4,7 +4,8 @@
 l=log
 rl=reflog
 m=checkout master
-p=pull
+p=push
+pl=pull
 pr="! git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD);"
 al=add --all
 c=commit -m
