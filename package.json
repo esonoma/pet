@@ -2,9 +2,10 @@
   "name": "shop",
   "version": "0.0.0",
   "engines": {
-    "node": ">=8.0.0",
+    "node": ">=16.0.0",
     "pnpm": ">=5.0.0"
   },
+  "packageManager": "pnpm@7.5.1",
   "scripts": {
     "prepare": "husky install",
     "setup:git": "sh ./scripts/setup-git.sh",
