@@ -1,7 +1,6 @@
-export const LOCALE_NAME = "ZH_CN";
-export const LOCALE = {
+export const name = "ZH_CN";
+export const locale = {
     message: {
         welcome: '欢迎',
     }
 };
-
