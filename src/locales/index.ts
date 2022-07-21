@@ -5,12 +5,14 @@ import { name as FALLBACK_LOCAL } from "./en";
 
 const locales = import.meta.globEager("./*.ts");
 export function setupI18n(app: App<Element>) {
-    app.use(createI18n({
-        locale: LOCAL_DEFAULT,
-        fallbackLocale: FALLBACK_LOCAL,
-        messages: Object.values(locales).reduce((acc, curr) => {
-            acc[curr?.name] = curr?.locale;
-            return acc;
-        }, {})
-    }));
+	app.use(
+		createI18n({
+			locale: LOCAL_DEFAULT,
+			fallbackLocale: FALLBACK_LOCAL,
+			messages: Object.values(locales).reduce((acc, curr) => {
+				acc[curr?.name] = curr?.locale;
+				return acc;
+			}, {}),
+		}),
+	);
 }

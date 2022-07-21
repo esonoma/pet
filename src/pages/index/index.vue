@@ -1,29 +1,36 @@
 <template>
-  <view>
-    <text> {{ $t("message.welcome") }} </text>
-  </view>
+	<view>
+		<text> {{ $t("message.welcome") }} </text>
+	</view>
 
-  <uni-card>
-    <text>这是一个基础卡片示例，内容较少，此示例展示了一个没有任何属性不带阴影的卡片。</text>
-  </uni-card>
+	<uni-card>
+		<text
+			>这是一个基础卡片示例，内容较少，此示例展示了一个没有任何属性不带阴影的卡片。</text
+		>
+	</uni-card>
 
-  <view class="content">
-    <view class="text-area">
-      <text class="title"> {{ login.username }}</text>
-    </view>
-    <button type="button" @click="startLogin">Login</button>
-    <button type="button" @click="loginOut">Logout</button>
-  </view>
+	<view class="content">
+		<view class="text-area">
+			<text class="title"> {{ login.username }}</text>
+		</view>
+		<button type="button" @click="startLogin">Login</button>
+		<button type="button" @click="loginOut">Logout</button>
+	</view>
 
-  <view>
-    <view v-for="data in messages" :key="data">
-      <text>{{ data }}</text>
-    </view>
-  </view>
-  <input class="uni-input" placeholder="Username" v-model="to" />
-  <br />
-  <input class="uni-input" focus placeholder="消息内容" v-model="textMessage" />
-  <button type="button" @click="sendMessage">Send</button>
+	<view>
+		<view v-for="data in messages" :key="data">
+			<text>{{ data }}</text>
+		</view>
+	</view>
+	<input class="uni-input" placeholder="Username" v-model="to" />
+	<br />
+	<input
+		class="uni-input"
+		focus
+		placeholder="消息内容"
+		v-model="textMessage"
+	/>
+	<button type="button" @click="sendMessage">Send</button>
 </template>
 
 <script setup lang="ts">
@@ -41,29 +48,32 @@ const login = useLogin();
 console.log(login.username);
 
 onMounted(() => {
-  if (wsConnected) {
-    socket.onMessage((data: any) => {
-      messages.push(data);
-    });
-  }
+	if (wsConnected) {
+		socket.onMessage((data: any) => {
+			messages.push(data);
+		});
+	}
 });
 
 function sendMessage() {
-  if (wsConnected) {
-    socket.send({
-      data: JSON.stringify({
-        to: to.value,
-        text: textMessage.value,
-        type: "text",
-      }),
-    });
-  }
+	if (wsConnected) {
+		socket.send({
+			data: JSON.stringify({
+				to: to.value,
+				text: textMessage.value,
+				type: "text",
+			}),
+		});
+	}
 }
 
 function startLogin() {
-  login.setLoginUser("XMing");
+	login.setLoginUser("XMing");
 }
 function loginOut() {
-  login.logout();
+	login.logout();
+	uni.navigateTo({
+		url: "/pages/test/index",
+	});
 }
 </script>
