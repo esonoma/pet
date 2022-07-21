@@ -36,7 +36,10 @@
 
 <script setup lang="ts">
 import { ref, onMounted, inject, reactive } from "vue";
-// import statusBar from "../../components/status-bar/index.vue";
+
+// example
+import "../../services/message/websocket";
+
 import appHeader from "../../components/app-header/index.vue";
 import { useLogin } from "../../store/login";
 
