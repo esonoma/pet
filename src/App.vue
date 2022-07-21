@@ -8,7 +8,7 @@ const login = useLogin();
 onLaunch(() => {
 	let wsConnected = false;
 	const socket = uni.connectSocket({
-		url: "wss://d19d-125-70-193-207.jp.ngrok.io",
+		url: "wss://dbe1-222-211-237-49.jp.ngrok.io",
 		header: {
 			"content-type": "application/json",
 		},

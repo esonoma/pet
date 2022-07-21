@@ -1,6 +1,12 @@
 import { Eventemitter } from "../../helpers";
-import { AnyFunction } from "../../types/utils";
+import { AnyFunction, UniversalKeys } from "../../types/utils";
 import { PresetWebsocketValidator } from "./PresetWebsocketValidator";
+import {
+	TextMessageModel,
+	HeartbeatMessageModel,
+	PresetMessageStatus,
+	BaseMessage,
+} from "./messages";
 
 class Websocket extends Eventemitter<AnyFunction> {
 	public configs: UniApp.ConnectSocketOption;
@@ -15,6 +21,8 @@ class Websocket extends Eventemitter<AnyFunction> {
 		super();
 		this.configs = configs;
 		// this.createHook();
+		this.connect();
+		// this.open();
 	}
 
 	// private createHook() {
@@ -35,10 +43,11 @@ class Websocket extends Eventemitter<AnyFunction> {
 		});
 	}
 
-	open() {
+	open(callback: AnyFunction) {
 		this.socketTask?.onOpen((res: UniApp.OnSocketOpenCallbackResult) => {
 			console.log("onOpen", res);
 			this.socketConnected = true;
+			callback(res);
 		});
 	}
 
@@ -83,8 +92,17 @@ class Websocket extends Eventemitter<AnyFunction> {
 		});
 	}
 
-	protected send(data: string | ArrayBuffer) {
-		this.socketTask?.send({ data });
+	protected send(instance: BaseMessage | string | ArrayBuffer) {
+		if (instance instanceof BaseMessage) {
+			instance.setSendAt(new Date());
+			this.socketTask?.send({
+				data: instance.toString(),
+				success: () =>
+					instance.updateMessageStatus(PresetMessageStatus.SENT),
+			});
+		} else {
+			this.socketTask?.send({ data: instance });
+		}
 	}
 
 	public close() {
@@ -104,12 +122,23 @@ class Websocket extends Eventemitter<AnyFunction> {
 		this.connect();
 	}
 
-	public sendHeartbeat() {
-		this.send("heartbeat");
+	// sendHeartbeatMessage (心跳消息)
+	public sendHeartbeat(form: string) {
+		const heartbeat = new HeartbeatMessageModel(form);
+		this.send(heartbeat);
+		return heartbeat;
 	}
 
-	public sendTextMessage(data: string) {
-		this.send(data);
+	// sendTextMessage (文本消息)
+	public sendTextMessage(
+		form: string,
+		to: string | string[],
+		data: string,
+		ext?: Record<UniversalKeys, unknown>,
+	) {
+		const textMessage = new TextMessageModel(form, to, data, ext);
+		this.send(textMessage);
+		return textMessage;
 	}
 
 	public sendBinaryMessage(data: ArrayBuffer) {
@@ -126,3 +155,12 @@ class Websocket extends Eventemitter<AnyFunction> {
 }
 
 export default Websocket;
+
+// example
+const websocket = new Websocket({
+	url: "wss://dbe1-222-211-237-49.jp.ngrok.io",
+});
+websocket.open(() => {
+	websocket.sendTextMessage("1658424567427", "1658424567203", "hello");
+	console.log("websocket open", websocket.socketConnected, websocket);
+});
