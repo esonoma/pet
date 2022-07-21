@@ -1,7 +1,7 @@
 <template>
-  <view>
-    <text class="title">{{ title }}</text>
-  </view>
+	<view>
+		<text class="title">{{ title }}</text>
+	</view>
 </template>
 
 <script setup lang="ts">

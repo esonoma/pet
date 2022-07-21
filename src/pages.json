@@ -1,25 +1,12 @@
 {
-  "pages": [{ "path": "pages/index/index" }, { "path": "pages/account/index" }],
+  "pages": [
+    { "path": "pages/index/index" },
+    { "path": "pages/account/index" },
+    { "path": "pages/test/index" }
+  ],
   "globalStyle": {
     "navigationStyle": "custom"
   },
-  "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#000000",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/account/index",
-        "text": "我的"
-      }
-    ]
-  },
-
   "easycom": {
     "autoscan": true,
     "custom": {
