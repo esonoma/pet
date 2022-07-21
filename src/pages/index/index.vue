@@ -1,5 +1,5 @@
 <template>
-	<status-bar />
+	<app-header />
 	<view>
 		<text> {{ $t("message.welcome") }} </text>
 	</view>
@@ -36,8 +36,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, inject, reactive } from "vue";
-import statusBar from "../../components/status-bar/index.vue";
-
+// import statusBar from "../../components/status-bar/index.vue";
+import appHeader from "../../components/app-header/index.vue";
 import { useLogin } from "../../store/login";
 
 const messages = reactive<string[]>([]);
@@ -48,7 +48,6 @@ const socket: any = inject("socket");
 const wsConnected = inject("wsConnected");
 
 const login = useLogin();
-console.log(login.username);
 
 onMounted(() => {
 	if (wsConnected) {
