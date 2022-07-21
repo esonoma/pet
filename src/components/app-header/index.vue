@@ -74,8 +74,8 @@ function renderSlotContent(position: "left" | "center" | "right"): boolean {
 
 <style lang="less">
 .header-view {
-	height: 120upx;
-	padding: 20upx 30upx;
+	height: 100upx;
+	padding: 10upx 30upx;
 	background-color: #fee;
 	display: flex;
 	justify-content: space-between;

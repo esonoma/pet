@@ -21,12 +21,6 @@ onLaunch(() => {
 	});
 	provide("socket", socket);
 	provide("wsConnected", wsConnected);
-
-	setTimeout(() => {
-		uni.navigateTo({
-			url: "/pages/account/index",
-		});
-	}, 3000);
 });
 onShow(() => {
 	// console.log("App Show");
