@@ -1,56 +1,87 @@
 module.exports = {
-  env: {
-    browser: true,
+	root: true,
 
-    es2021: true,
+	env: {
+		browser: true,
 
-    node: true,
-  },
+		es2021: true,
 
-  extends: ["plugin:vue/vue3-essential", "airbnb-base", "prettier", "plugin:prettier/recommended"],
+		node: true,
+	},
 
-  parserOptions: {
-    ecmaVersion: "latest",
+	// https://eslint.org/docs/latest/user-guide/configuring/plugins#specifying-parser
+	parser: "vue-eslint-parser",
 
-    parser: "@typescript-eslint/parser",
+	extends: [
+		"plugin:vue/vue3-essential",
+		"plugin:vue/base",
+		"airbnb-base",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+	],
 
-    sourceType: "module",
-  },
+	parserOptions: {
+		ecmaVersion: "latest",
+		parser: "@typescript-eslint/parser",
 
-  plugins: ["vue", "@typescript-eslint"],
+		sourceType: "module",
+	},
 
-  globals: {
-    // uni-app开发环境
+	plugins: ["vue", "@typescript-eslint", "prettier"],
 
-    uni: true,
+	globals: {
+		// uni-app开发环境
 
-    plus: true,
+		uni: true,
 
-    wx: true,
-  },
+		plus: true,
 
-  settings: {
-    "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
-      },
-    },
-  },
+		wx: true,
 
-  rules: {
-    "linebreak-style": [0, "error", "windows"],
+		getCurrentPages: true,
 
-    "import/prefer-default-export": "off",
+		UniApp: true,
+	},
 
-    "import/extensions": "off",
+	settings: {
+		"import/resolver": {
+			node: {
+				extensions: [".js", ".jsx", ".ts", ".tsx", ".json"],
+			},
+		},
+	},
 
-    // 在不同目录下会存在同名的组件，这里允许重名
+	rules: {
+		"linebreak-style": [0, "error", "windows"],
 
-    "vue/multi-word-component-names": "off",
+		"import/prefer-default-export": "off",
 
-    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+		"import/extensions": "off",
 
-    "prettier/prettier": "off",
-    "no-use-before-define": "off",
-  },
+		// 在不同目录下会存在同名的组件，这里允许重名
+
+		"vue/multi-word-component-names": "off",
+
+		"import/no-extraneous-dependencies": [
+			"error",
+			{
+				devDependencies: true,
+			},
+		],
+
+		"no-use-before-define": "off",
+
+		"@typescript-eslint/no-explicit-any": "off",
+
+		"class-methods-use-this": "off",
+
+		"prettier/prettier": [
+			"error",
+			{
+				endofLine: "lf",
+				useTabs: true,
+			},
+		],
+	},
 };
