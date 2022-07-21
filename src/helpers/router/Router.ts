@@ -23,7 +23,6 @@ export class Router
 
 	navigateTo(options: UniApp.NavigateToOptions): void {
 		this.dispatchBeforeEach(options, () => {
-			console.log("navigateTo", originRouterMaps);
 			originRouterMaps.navigateTo(options);
 		});
 	}

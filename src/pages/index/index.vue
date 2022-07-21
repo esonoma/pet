@@ -1,4 +1,5 @@
 <template>
+	<status-bar />
 	<view>
 		<text> {{ $t("message.welcome") }} </text>
 	</view>
@@ -35,6 +36,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, inject, reactive } from "vue";
+import statusBar from "../../components/status-bar/index.vue";
+
 import { useLogin } from "../../store/login";
 
 const messages = reactive<string[]>([]);
@@ -77,3 +80,10 @@ function loginOut() {
 	});
 }
 </script>
+
+<style lang="less">
+.title {
+	font-size: 20px;
+	color: red;
+}
+</style>
