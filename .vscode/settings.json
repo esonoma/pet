@@ -5,7 +5,7 @@
 		"source.fixAll": true
 		// "source.fixAll.eslint": true
 	},
-	// "editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"html.autoClosingTags": true, // auto close tags
 	"html.autoCreateQuotes": true,
 	"editor.linkedEditing": true // auto rename linked tags

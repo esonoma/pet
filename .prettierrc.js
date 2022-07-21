@@ -6,5 +6,5 @@ module.exports = {
 	bracketSpacing: true,
 	tabWidth: 4,
 	useTabs: true,
-	"eslint.autoFixOnSave": true,
+	// "eslint.autoFixOnSave": true,
 };
