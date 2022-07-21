@@ -3,7 +3,7 @@
 	<view class="header-view">
 		<view class="header-left-view">
 			<slot name="header-left" />
-			<text>{{ props.left }}</text>
+			<text>Back</text>
 		</view>
 
 		<view class="content">
@@ -15,7 +15,7 @@
 			</view>
 		</view>
 
-		<text> {{ props.right }} </text>
+		<text> Logout </text>
 
 		<slot name="header-right" />
 	</view>
