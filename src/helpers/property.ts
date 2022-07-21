@@ -1,4 +1,4 @@
-import { isFunction, isObject } from "./types";
+import { isFunction } from "./types";
 
 type Module = Record<string, any>;
 type AnyFunction = (...args: any[]) => any;

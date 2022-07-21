@@ -18,7 +18,7 @@ export type Keys = typeof rewriteRouterMethods[number];
 
 export const originRouterMaps =
 	rewriteRouterMethods.reduce<RewriteRouterMethodsKeys>((acc, cur) => {
-		if (!hasOwnProperty(acc, cur) && hasOwnProperty(uni, cur)) {
+		if (!hasOwnProperty(acc, cur)) {
 			// setProperty(acc, cur, uni[cur]);
 			(acc as any)[cur] = uni[cur];
 		}
