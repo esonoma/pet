@@ -54,28 +54,19 @@ module.exports = {
 
 	rules: {
 		"linebreak-style": [0, "error", "windows"],
-
 		"import/prefer-default-export": "off",
-
 		"import/extensions": "off",
-
 		// 在不同目录下会存在同名的组件，这里允许重名
-
 		"vue/multi-word-component-names": "off",
-
 		"import/no-extraneous-dependencies": [
 			"error",
 			{
 				devDependencies: true,
 			},
 		],
-
 		"no-use-before-define": "off",
-
 		"@typescript-eslint/no-explicit-any": "off",
-
 		"class-methods-use-this": "off",
-
 		"prettier/prettier": [
 			"error",
 			{
@@ -85,5 +76,16 @@ module.exports = {
 		],
 		"no-shadow": "off",
 		"@typescript-eslint/no-shadow": ["error"],
+
+		// https://www.npmjs.com/package/eslint-plugin-import-alias
+		// "import-alias/import-alias": [
+		// 	"error",
+		// 	{
+		// 		relativeDepth: 0,
+		// 		aliases: [{ alias: "@//", matcher: "^src//" }],
+		// 	},
+		// ],
+
+		"import/no-unresolved": "off",
 	},
 };

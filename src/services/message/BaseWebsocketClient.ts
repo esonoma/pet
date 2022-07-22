@@ -1,5 +1,5 @@
-import { Eventemitter } from "../../helpers";
-import { AnyFunction } from "../../types/utils";
+import { Eventemitter } from "@/helpers";
+import { AnyFunction } from "@/types/utils";
 import { PresetMessageStatus, BaseMessage } from "./messages";
 
 export default class BaseWebsocketClient extends Eventemitter<AnyFunction> {

@@ -1,4 +1,4 @@
-import { isArrayBuffer } from "../../helpers";
+import { isArrayBuffer } from "@/helpers";
 
 export default class PresetValidators {
 	// utf8encoder = new TextEncoder();

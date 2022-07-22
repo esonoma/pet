@@ -1,9 +1,8 @@
 import { createSSRApp } from "vue";
+import { setupRouter } from "@helpers/router";
 import App from "./App.vue";
 import setupPinia from "./store";
 import { setupI18n } from "./locales";
-import { setupRouter } from "./helpers/router";
-import "./helpers/router/Router";
 
 export function createApp() {
 	const app = createSSRApp(App);

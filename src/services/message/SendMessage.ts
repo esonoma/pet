@@ -1,4 +1,4 @@
-import { UniversalKeys } from "../../types";
+import { UniversalKeys } from "@/types";
 import {
 	FileMessageModel,
 	HeartbeatMessageModel,

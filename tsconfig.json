@@ -13,7 +13,27 @@
 		"types": ["@dcloudio/types"],
 		"strictPropertyInitialization": false,
 		"noUnusedLocals": false,
-		"noUnusedParameters": false
+		"noUnusedParameters": false,
+		"baseUrl": "./",
+		"paths": {
+			"@/*": ["src/*"],
+			"@platform/*": ["src/platform/*"],
+			"@helpers/*": ["src/helpers/*"],
+			"@components/*": ["src/components/*"],
+			"@store/*": ["src/store/*"],
+			"@wxComponents/*": ["src/wxComponents/*"],
+			"@services/*": ["src/services/*"],
+			"@locales/*": ["src/locales/*"],
+
+			// deep import
+			"@domains/*": ["src/services/domains/*"],
+			"@message/*": ["src/services/message/*"],
+			"@http/*": ["src/services/http/*"],
+		},
 	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.d.ts",
+		"src/**/*.tsx", "src/**/*.vue"
+]
 }

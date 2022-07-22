@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import appHeader from "../../components/app-header/index.vue";
+import appHeader from "@components/app-header/index.vue";
 
 const title = ref("Account");
 </script>
