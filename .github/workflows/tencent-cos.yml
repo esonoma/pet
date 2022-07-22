@@ -8,11 +8,12 @@ on:
       - v* # 所有以 v 开头的 tag
 jobs:
   init-tencent-cos-bucket:
-    name: Initialize COS prepare environment
     runs-on: ubuntu-latest
+
     steps:
-      - name: setup cos-cmd tool
       - uses: actions/checkout@v3
+
+      - name: setup cos-cmd tool
         run: sudo pip install cos-cmd
       
       - name: config cos cmd
@@ -23,8 +24,8 @@ jobs:
           BUCKET: ${{ BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
       
-      - name: setup nodejs environment
       - uses: actions/setup-node@v2
+      - name: setup nodejs environment
         with:
           node-version: 14.x
         run: npm install && npm run build:h5
