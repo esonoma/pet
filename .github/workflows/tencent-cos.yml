@@ -27,13 +27,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-      
-      - name: init tencent-cos environment
       - run: npm install
       - run: npm run build:h5
       # - run: npm run build:h5:ssr
 
       - name: upload h5 static files to tencent-cos
       - run: coscmd upload -r ./dist/build/h5 /
-        
-    
