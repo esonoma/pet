@@ -12,7 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
 
       - name: setup cos-cmd tool
         run: sudo pip install cos-cmd
@@ -26,9 +25,11 @@ jobs:
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
       
       - name: setup nodejs environment
+      - uses: actions/setup-node@v2
         with:
           node-version: 14.x
-        run: npm install && npm run build:h5
+      - run: npm install
+      - run: npm run build:h5
 
       - name: upload h5 static files to tencent-cos
         run: coscmd upload -r ./dist/build/h5 /
