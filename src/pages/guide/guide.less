@@ -2,8 +2,16 @@
   width: 100%;
 
   .swiper {
+    /* #ifdef APP-PLUS | MP-WEIXIN */
     // 25px 为小程序导航栏高度, 暂时写死
     height: calc(100vh - 25px);
+
+    /* #endif */
+
+    /* #ifdef H5 */
+    height: 100vh;
+
+    /* #endif */
 
     .swiper-item {
       height: 100%;
