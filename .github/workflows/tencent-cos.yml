@@ -18,10 +18,10 @@ jobs:
       
       - name: config cos cmd
         env: 
-          SECRET_ID: ${{ SECRET_ID }}
-          SECRET_KEY: ${{ SECRET_KEY }}
-          REGION: ${{ REGION }}
-          BUCKET: ${{ BUCKET }}
+          SECRET_ID: ${{ env.SECRET_ID }}
+          SECRET_KEY: ${{ env.SECRET_KEY }}
+          REGION: ${{ env.REGION }}
+          BUCKET: ${{ env.BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
       
       - uses: actions/setup-node@v2
