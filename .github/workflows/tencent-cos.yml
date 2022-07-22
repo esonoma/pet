@@ -1,0 +1,39 @@
+name: tencent-cos-ci
+on:
+  push:
+    branches:
+      - master
+      - release/** # 项目暂时使用 release 分支作为发布分支
+    tags:
+      - v* # 所有以 v 开头的 tag
+jobs:
+  init-tencent-cos-bucket:
+    name: Initialize COS prepare environment
+    runs-on: ubuntu-latest
+    steps:
+      - name: setup cos-cmd tool
+      - uses: actions/checkout@v2
+        run: sudo pip install cos-cmd
+      
+      - name: config cos cmd
+        env: 
+          SECRET_ID: ${{ SECRET_ID }}
+          SECRET_KEY: ${{ SECRET_KEY }}
+          REGION: ${{ REGION }}
+          BUCKET: ${{ BUCKET }}
+        run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+      
+      - name: setup nodejs environment
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+      
+      - name: init tencent-cos environment
+      - run: npm install
+      - run: npm run build:h5
+      # - run: npm run build:h5:ssr
+
+      - name: upload h5 static files to tencent-cos
+      - run: coscmd upload -r ./dist/build/h5 /
+        
+    
