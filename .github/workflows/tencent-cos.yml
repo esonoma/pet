@@ -14,7 +14,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: setup cos-cmd tool
-        run: sudo pip install cos-cmd
+        run: sudo pip install coscmd
       
       - name: config cos cmd
         env: 
