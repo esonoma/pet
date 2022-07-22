@@ -33,4 +33,4 @@ jobs:
       - run: npm run build:h5
 
       - name: upload h5 static files to tencent-cos
-        run: coscmd upload -r ./dist/build/h5 /
+        run: coscmd upload -r ./dist/build/h5/ /
