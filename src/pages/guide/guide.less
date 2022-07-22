@@ -1,20 +1,41 @@
 .app-guide-wrap {
-  width: 100%;
+	width: 100%;
 
-  .swiper {
-    /* #ifdef APP-PLUS | MP-WEIXIN */
-    // 25px 为小程序导航栏高度, 暂时写死
-    height: calc(100vh - 25px);
+	.swiper {
+		/* #ifdef APP-PLUS | MP-WEIXIN */
+		// 25px 为小程序导航栏高度, 暂时写死
+		height: calc(100vh - 25px);
 
-    /* #endif */
+		/* #endif */
 
-    /* #ifdef H5 */
-    height: 100vh;
+		/* #ifdef H5 */
+		height: 100vh;
 
-    /* #endif */
+		/* #endif */
 
-    .swiper-item {
-      height: 100%;
-    }
-  }
+		.swiper-item {
+			height: 100%;
+
+			.swiper-item-content {
+				height: 100%;
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}
+
+.actions {
+	display: flex;
+	justify-content: center;
+
+	.start-shopping {
+		width: 400rpx;
+		position: fixed;
+		bottom: 200rpx;
+		border-radius: 40rpx;
+		box-shadow: inset 0 0 0 1px #fff;
+	}
 }
