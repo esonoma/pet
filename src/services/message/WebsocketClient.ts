@@ -1,4 +1,4 @@
-import { UniversalKeys } from "../../types";
+import { UniversalKeys } from "@/types";
 import BaseWebsocketClient from "./BaseWebsocketClient";
 import {
 	FileMessageModel,
@@ -10,7 +10,7 @@ import {
 import { SendMessage } from "./SendMessage";
 import { ListenMessage } from "./ListenMessage";
 import PresetValidators from "./PresetValidators";
-import { isString } from "../../helpers";
+import { isString } from "@/helpers";
 
 export default class WebsocketClient
 	extends BaseWebsocketClient

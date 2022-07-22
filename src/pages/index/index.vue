@@ -2,15 +2,14 @@
 	<app-header />
 	<view>
 		<text> {{ $t("message.welcome") }} </text>
-
 		<text v-for="msg in messages" :key="msg">{{ msg }}</text>
 	</view>
 </template>
 
 <script setup lang="ts">
 import { reactive } from "vue";
-import WebsocketClient from "../../services/message/WebsocketClient";
-import appHeader from "../../components/app-header/index.vue";
+import appHeader from "@components/app-header/index.vue";
+import WebsocketClient from "@message/WebsocketClient";
 
 const messages = reactive<string[]>([]);
 const websocketClient = new WebsocketClient({

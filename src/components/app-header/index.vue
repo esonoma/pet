@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { getCurrentInstance } from "vue";
-import statusBar from "../status-bar/index.vue";
+import statusBar from "@components/status-bar/index.vue";
 
 const currentInstance = getCurrentInstance();
 

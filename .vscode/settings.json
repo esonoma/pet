@@ -8,5 +8,11 @@
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"html.autoClosingTags": true, // auto close tags
 	"html.autoCreateQuotes": true,
-	"editor.linkedEditing": true // auto rename linked tags
+	"editor.linkedEditing": true,
+	"cSpell.words": [
+		"dcloudio",
+		"linebreak",
+		"weixin",
+		"uni"
+	] // auto rename linked tags
 }

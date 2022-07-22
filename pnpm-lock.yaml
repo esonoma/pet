@@ -18,7 +18,8 @@ specifiers:
   eslint: ^7.32.0 || ^8.2.0
   eslint-config-airbnb-base: ^15.0.0
   eslint-config-prettier: ^8.5.0
-  eslint-plugin-import: ^2.25.2
+  eslint-plugin-import: ^2.26.0
+  eslint-plugin-import-alias: ^1.2.0
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-vue: ^9.2.0
   husky: ^8.0.1
@@ -62,6 +63,7 @@ devDependencies:
   eslint-config-airbnb-base: registry.npmmirror.com/eslint-config-airbnb-base/15.0.0_afl3vkhn63baibzal45igheroq
   eslint-config-prettier: registry.npmmirror.com/eslint-config-prettier/8.5.0_eslint@8.20.0
   eslint-plugin-import: registry.npmmirror.com/eslint-plugin-import/2.26.0_y5cwkwncsnk6w3wfynadgn7abe
+  eslint-plugin-import-alias: registry.npmmirror.com/eslint-plugin-import-alias/1.2.0
   eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.2.1_g4fztgbwjyq2fvmcscny2sj6fy
   eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/9.2.0_eslint@8.20.0
   husky: registry.npmmirror.com/husky/8.0.1
@@ -3562,6 +3564,12 @@ packages:
       find-up: registry.npmmirror.com/find-up/2.1.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  registry.npmmirror.com/eslint-plugin-import-alias/1.2.0:
+    resolution: {integrity: sha512-hxhpWtaXgBTeCUmQa6EzjKI8vnrk7uej9e+ln2etTMPFAM7Q8xNPdBywSGrWf2mSB018D66sR1ZfdThonXCplg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/eslint-plugin-import-alias/-/eslint-plugin-import-alias-1.2.0.tgz}
+    name: eslint-plugin-import-alias
+    version: 1.2.0
     dev: true
 
   registry.npmmirror.com/eslint-plugin-import/2.26.0_y5cwkwncsnk6w3wfynadgn7abe:

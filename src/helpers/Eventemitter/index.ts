@@ -1,4 +1,4 @@
-import { AnyFunction } from "../../types/utils";
+import { AnyFunction } from "@/types/utils";
 
 export class Eventemitter<V extends AnyFunction = AnyFunction> {
 	private events: Map<string, V> = new Map<string, V>();
