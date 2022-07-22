@@ -2,6 +2,7 @@ name: tencent-cos-ci
 on:
   push:
     branches:
+      - master
       - release/** # 项目暂时使用 release 分支作为发布分支
     tags:
       - v* # 所有以 v 开头的 tag
