@@ -11,9 +11,9 @@ jobs:
     name: Initialize COS prepare environment
     runs-on: ubuntu-latest
     steps:
-      - name: setup cos-cmd tool
       - uses: actions/checkout@v3
-        run: sudo pip install cos-cmd
+      - name: setup cos-cmd tool
+      - run: sudo pip install cos-cmd
       
       - name: config cos cmd
         env: 
@@ -22,11 +22,12 @@ jobs:
           REGION: ${{ REGION }}
           BUCKET: ${{ BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-      
+  init-nodejs-env: 
+    name: nodejs env
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3.4.1
       - name: setup nodejs environment
-      - uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
         run: npm install && npm run build:h5
 
       - name: upload h5 static files to tencent-cos
