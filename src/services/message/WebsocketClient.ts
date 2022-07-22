@@ -22,14 +22,8 @@ export default class WebsocketClient
 		image: "onImageMessage",
 		file: "onFileMessage",
 		binary: "onBinaryMessage",
+		heartbeat: "onHeartbeatMessage",
 	};
-
-	constructor(configs: UniApp.ConnectSocketOption) {
-		super(configs);
-
-		// 消息分发(分发到各个消息类型的回调)
-		this.dispensers();
-	}
 
 	// SendMessage 提供的标识符
 	sendable = true;
@@ -127,23 +121,9 @@ export default class WebsocketClient
 	onFileMessage(callback: (message: FileMessageModel) => void) {
 		this.on("onFileMessage", callback);
 	}
+
+	// onHeartbeatMessage (心跳消息)
+	onHeartbeatMessage(callback: (message: HeartbeatMessageModel) => void) {
+		this.on("onHeartbeatMessage", callback);
+	}
 }
-
-// example
-const websocket = new WebsocketClient({
-	url: "wss://d04f-222-211-237-49.jp.ngrok.io",
-});
-
-websocket
-	.connect()
-	.open()
-	.then(() => {
-		console.log("connect success");
-		websocket.sendHeartbeat("user1");
-	});
-websocket.onTextMessage((message) => {
-	console.log("TextMessage", message);
-});
-websocket.onBinaryMessage((message) => {
-	console.log("BinaryMessage", message);
-});

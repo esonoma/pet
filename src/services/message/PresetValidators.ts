@@ -19,15 +19,19 @@ export default class PresetValidators {
 		const { data } = message;
 
 		let result: string;
-
 		if (isArrayBuffer(data)) {
 			result = this.utf8decoder.decode(data as ArrayBuffer);
+		} else {
+			result = data.toString();
 		}
 
-		result = data.toString();
-
 		if (tojson) {
-			return JSON.parse(result);
+			try {
+				return JSON.parse(result);
+			} catch (error) {
+				// eslint-disable-next-line no-console
+				console.error(error);
+			}
 		}
 
 		return result;

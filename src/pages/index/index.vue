@@ -2,41 +2,27 @@
 	<app-header />
 	<view>
 		<text> {{ $t("message.welcome") }} </text>
-	</view>
 
-	<uni-card>
-		<text
-			>这是一个基础卡片示例，内容较少，此示例展示了一个没有任何属性不带阴影的卡片。</text
-		>
-	</uni-card>
-
-	<view class="content">
-		<view class="text-area">
-			<text class="title"> {{ login.username }}</text>
-		</view>
-		<button type="button" @click="startLogin">Login</button>
-		<button type="button" @click="loginOut">Logout</button>
+		<text v-for="msg in messages" :key="msg">{{ msg }}</text>
 	</view>
 </template>
 
 <script setup lang="ts">
-// example
-import "../../services/message/WebsocketClient";
-
+import { reactive } from "vue";
+import WebsocketClient from "../../services/message/WebsocketClient";
 import appHeader from "../../components/app-header/index.vue";
-import { useLogin } from "../../store/login";
 
-const login = useLogin();
+const messages = reactive<string[]>([]);
+const websocketClient = new WebsocketClient({
+	url: "wss://ad24-222-211-237-49.jp.ngrok.io",
+}).connect();
+websocketClient.open().then(() => {
+	websocketClient.dispensers();
+});
 
-function startLogin() {
-	login.setLoginUser("XMing");
-}
-function loginOut() {
-	login.logout();
-	uni.navigateTo({
-		url: "/pages/test/index",
-	});
-}
+websocketClient.onTextMessage((message) => {
+	messages.push(JSON.stringify(message));
+});
 </script>
 
 <style lang="less">
