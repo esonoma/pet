@@ -1,8 +1,10 @@
 {
+  "titleNView": false, 
   "pages": [
     { "path": "pages/index/index" },
     { "path": "pages/account/index" },
-    { "path": "pages/test/index" }
+    { "path": "pages/test/index" },
+    { "path" : "pages/guide/guide"}
   ],
   "globalStyle": {
     "navigationStyle": "custom"

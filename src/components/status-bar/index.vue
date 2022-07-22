@@ -1,13 +1,13 @@
 <template>
-	<view class="status-bar" :class="notWeixinStatusStyle"></view>
+	<view class="status-bar"></view>
 </template>
 
 <script setup lang="ts">
 // #ifndef MP-WEIXIN
-const { statusBarHeight } = uni.getSystemInfoSync();
-const notWeixinStatusStyle = {
-	height: statusBarHeight,
-};
+// const { statusBarHeight } = uni.getSystemInfoSync();
+// const notWeixinStatusStyle = {
+// 	height: statusBarHeight,
+// };
 // #endif
 </script>
 

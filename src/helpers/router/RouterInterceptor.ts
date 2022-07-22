@@ -41,30 +41,28 @@ export default class RouterInterceptor {
 	}
 
 	protected dispatchBeforeEach(options: any, nextFunc?: () => void) {
-		if (this.onBeforeEachCallback?.length) {
-			const activePage = getActivePage();
-			if (this.onBeforeAbortCallback?.length) {
-				this.onBeforeEachCallback?.forEach(async (beforeCallback) => {
-					const beforeCallbackResult = beforeCallback(
-						options,
-						activePage,
-					);
-					const nextStatus = isStrictPromise(beforeCallbackResult)
-						? await beforeCallbackResult
-						: beforeCallbackResult;
+		const activePage = getActivePage();
+		if (this.onBeforeAbortCallback?.length) {
+			this.onBeforeEachCallback?.forEach(async (beforeCallback) => {
+				const beforeCallbackResult = beforeCallback(
+					options,
+					activePage,
+				);
+				const nextStatus = isStrictPromise(beforeCallbackResult)
+					? await beforeCallbackResult
+					: beforeCallbackResult;
 
-					// 返回 false ｜ promise<false> 则中断后续操作
-					if (nextStatus === false) {
-						this.onBeforeAbortCallback?.(activePage, options, {});
-					} else {
-						nextFunc?.();
-					}
-				});
-			}
-			// 没有 beforeAbortCallback 则直接执行
-			else {
-				nextFunc?.();
-			}
+				// 返回 false ｜ promise<false> 则中断后续操作
+				if (nextStatus === false) {
+					this.onBeforeAbortCallback?.(activePage, options, {});
+				} else {
+					nextFunc?.();
+				}
+			});
+		}
+		// 没有 beforeAbortCallback 则直接执行
+		else {
+			nextFunc?.();
 		}
 	}
 
