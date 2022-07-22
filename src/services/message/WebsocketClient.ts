@@ -5,6 +5,7 @@ import {
 	HeartbeatMessageModel,
 	ImageMessageModel,
 	TextMessageModel,
+	BinaryMessageModel,
 } from "./messages";
 import { SendMessage } from "./SendMessage";
 import { ListenMessage } from "./ListenMessage";
@@ -17,12 +18,14 @@ export default class WebsocketClient
 {
 	validators = new PresetValidators();
 
+	// registerDispenser (注册消息分发)
 	dispenserRules = {
-		text: "onTextMessage",
-		image: "onImageMessage",
-		file: "onFileMessage",
-		binary: "onBinaryMessage",
-		heartbeat: "onHeartbeatMessage",
+		[TextMessageModel.dispatchType]: TextMessageModel.registerHookName,
+		[ImageMessageModel.dispatchType]: ImageMessageModel.registerHookName,
+		[FileMessageModel.dispatchType]: FileMessageModel.registerHookName,
+		[HeartbeatMessageModel.dispatchType]:
+			HeartbeatMessageModel.registerHookName,
+		[BinaryMessageModel.dispatchType]: BinaryMessageModel.registerHookName,
 	};
 
 	// SendMessage 提供的标识符
@@ -55,6 +58,7 @@ export default class WebsocketClient
 	}
 
 	// sendImageMessage (图片消息)
+	// TODO: 等待实现
 	public sendImageMessage(
 		form: string,
 		to: string | string[],
@@ -65,6 +69,7 @@ export default class WebsocketClient
 	}
 
 	// sendFileMessage (文件消息)
+	// TODO: 等待实现
 	public sendFileMessage(
 		form: string,
 		to: string | string[],
@@ -75,6 +80,7 @@ export default class WebsocketClient
 	}
 
 	// sendBinaryMessage (二进制消息)
+	// TODO: 等待实现
 	public sendBinaryMessage(
 		from: string,
 		to: string | string[],
@@ -104,7 +110,7 @@ export default class WebsocketClient
 
 	// onTextMessage (文本消息)
 	onTextMessage(callback: (message: TextMessageModel) => void) {
-		this.on("onTextMessage", callback);
+		this.on(TextMessageModel.registerHookName, callback);
 	}
 
 	// onBinaryMessage (二进制消息)
@@ -114,16 +120,16 @@ export default class WebsocketClient
 
 	// onImageMessage (图片消息)
 	onImageMessage(callback: (message: ImageMessageModel) => void) {
-		this.on("onImageMessage", callback);
+		this.on(ImageMessageModel.registerHookName, callback);
 	}
 
 	// onFileMessage (文件消息)
 	onFileMessage(callback: (message: FileMessageModel) => void) {
-		this.on("onFileMessage", callback);
+		this.on(FileMessageModel.registerHookName, callback);
 	}
 
 	// onHeartbeatMessage (心跳消息)
 	onHeartbeatMessage(callback: (message: HeartbeatMessageModel) => void) {
-		this.on("onHeartbeatMessage", callback);
+		this.on(HeartbeatMessageModel.registerHookName, callback);
 	}
 }
