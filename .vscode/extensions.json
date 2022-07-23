@@ -2,7 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "stylelint.vscode-stylelint",
+    // "stylelint.vscode-stylelint", // 存在兼容性问题，暂时不使用
     "streetsidesoftware.code-spell-checker",
     "Vue.volar"
   ]

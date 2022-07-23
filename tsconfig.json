@@ -29,6 +29,10 @@
 			"@domains/*": ["src/services/domains/*"],
 			"@message/*": ["src/services/message/*"],
 			"@http/*": ["src/services/http/*"],
+
+			// deep import common
+			"@common/*": ["src/common/*"],
+			// "@stylesheets/*": ["src/common/stylesheets/*"],
 		},
 	},
 	"include": [

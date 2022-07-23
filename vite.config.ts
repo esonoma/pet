@@ -20,6 +20,10 @@ export default defineConfig({
 			"@http": "/src/services/http",
 			"@domains": "/src/services/domains",
 			"@message": "/src/services/message",
+
+			// deep-import commons
+			"@common": "/src/commons",
+			// "@stylesheets": "/src/commons/stylesheets",
 		},
 	},
 });

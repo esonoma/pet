@@ -3,7 +3,8 @@
 	"files.eol": "\n",
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true
-		// "source.fixAll.eslint": true
+		// "source.fixAll.eslint": true,
+		// "source.fixAll.stylelint": true,
 	},
 	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"html.autoClosingTags": true, // auto close tags
@@ -13,9 +14,14 @@
 		"dcloudio",
 		"fundebug",
 		"linebreak",
+		"stylelint",
 		"swiper",
 		"tencent",
 		"uni",
 		"weixin"
-	] // auto rename linked tags
+	], // auto rename linked tags
+
+	// close vetur ts.js validation
+	// use default prettier-vscode
+	"vetur.validation.script": false
 }

@@ -11,3 +11,7 @@ export function safeExecCallback<P1 = any, V = any>(
 	}
 	return undefined;
 }
+
+export function noop() {
+	// do nothing
+}
