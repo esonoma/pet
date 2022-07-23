@@ -1,12 +1,8 @@
 {
-	"editor.formatOnSave": false,
 	"files.eol": "\n",
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true
-		// "source.fixAll.eslint": true,
-		// "source.fixAll.stylelint": true,
 	},
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
 	"html.autoClosingTags": true, // auto close tags
 	"html.autoCreateQuotes": true,
 	"editor.linkedEditing": true,
