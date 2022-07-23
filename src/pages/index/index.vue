@@ -1,8 +1,8 @@
 <template>
 	<app-header />
 	<view>
+		<text>Home</text>
 		<text> {{ $t("message.welcome") }} </text>
-		<!-- <text v-for="msg in messages" :key="msg">{{ msg }}</text> -->
 	</view>
 </template>
 
