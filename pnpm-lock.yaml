@@ -22,6 +22,8 @@ specifiers:
   eslint-plugin-import-alias: ^1.2.0
   eslint-plugin-prettier: ^4.2.1
   eslint-plugin-vue: ^9.2.0
+  fundebug-javascript: ^2.8.6
+  fundebug-vue: ^0.3.6
   husky: ^8.0.1
   less: ^4.1.3
   lint-staged: ^13.0.3
@@ -67,6 +69,8 @@ devDependencies:
   eslint-plugin-import-alias: registry.npmmirror.com/eslint-plugin-import-alias/1.2.0
   eslint-plugin-prettier: registry.npmmirror.com/eslint-plugin-prettier/4.2.1_g4fztgbwjyq2fvmcscny2sj6fy
   eslint-plugin-vue: registry.npmmirror.com/eslint-plugin-vue/9.2.0_eslint@8.20.0
+  fundebug-javascript: registry.npmmirror.com/fundebug-javascript/2.8.6
+  fundebug-vue: registry.npmmirror.com/fundebug-vue/0.3.6
   husky: registry.npmmirror.com/husky/8.0.1
   less: registry.npmmirror.com/less/4.1.3
   lint-staged: registry.npmmirror.com/lint-staged/13.0.3
@@ -1992,6 +1996,12 @@ packages:
       '@babel/helper-validator-identifier': registry.npmmirror.com/@babel/helper-validator-identifier/7.18.6
       chalk: registry.npmmirror.com/chalk/2.4.2
       js-tokens: registry.npmmirror.com/js-tokens/4.0.0
+    dev: true
+
+  registry.npmmirror.com/@bugsnag/safe-json-stringify/6.0.0:
+    resolution: {integrity: sha512-htzFO1Zc57S8kgdRK9mLcPVTW1BY2ijfH7Dk2CeZmspTWKdKqSo1iwmqrq2WtRjFlo8aRZYgLX0wFrDXF/9DLA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@bugsnag/safe-json-stringify/-/safe-json-stringify-6.0.0.tgz}
+    name: '@bugsnag/safe-json-stringify'
+    version: 6.0.0
     dev: true
 
   registry.npmmirror.com/@commitlint/cli/17.0.3:
@@ -3999,6 +4009,20 @@ packages:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/functions-have-names/-/functions-have-names-1.2.3.tgz}
     name: functions-have-names
     version: 1.2.3
+    dev: true
+
+  registry.npmmirror.com/fundebug-javascript/2.8.6:
+    resolution: {integrity: sha512-Z5j0qrYytK9OuRkua1JilKYtDoscRiJd8Ay5SGuHDhuCboLMuPzj4Sv1IoCQCIpYWZSZHwtiz345GdYzDQRRbw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fundebug-javascript/-/fundebug-javascript-2.8.6.tgz}
+    name: fundebug-javascript
+    version: 2.8.6
+    dependencies:
+      '@bugsnag/safe-json-stringify': registry.npmmirror.com/@bugsnag/safe-json-stringify/6.0.0
+    dev: true
+
+  registry.npmmirror.com/fundebug-vue/0.3.6:
+    resolution: {integrity: sha512-fVA2srxZJrtJu80oWbNIAC2EXJn4HG2uG1cbSxX3BTNIDA5KKz/fRU9cHKshMvt6xD9i1RinDsi9pLeuk8uhBA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/fundebug-vue/-/fundebug-vue-0.3.6.tgz}
+    name: fundebug-vue
+    version: 0.3.6
     dev: true
 
   registry.npmmirror.com/get-caller-file/2.0.5:
