@@ -17,4 +17,4 @@ jobs:
         uses: actions/setup-node@v3.4.1
         with:
           node-version: 14.x
-      - run: sed -i '' "s/@FUNDEBUG_SHOP_APIKEY/${{ secrets.FUNDEBUG_SHOP_APIKEY }}/" .env
+      - run: sed -i '' "s/@FUNDEBUG_SHOP_APIKEY/${{ secrets.FUNDEBUG_SHOP_APIKEY }}/" ../../.env
