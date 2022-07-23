@@ -36,4 +36,11 @@ export interface SendMessage {
 		data: string | ArrayBuffer,
 		ext?: Record<UniversalKeys, unknown>,
 	) => FileMessageModel | void;
+
+	sendEmojiMessage?: (
+		form: string,
+		to: string | string[],
+		data: string | ArrayBuffer,
+		ext?: Record<UniversalKeys, unknown>,
+	) => void;
 }

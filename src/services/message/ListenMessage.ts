@@ -1,4 +1,5 @@
 import {
+	EmojiMessageModel,
 	FileMessageModel,
 	HeartbeatMessageModel,
 	ImageMessageModel,
@@ -16,4 +17,6 @@ export interface ListenMessage {
 	onHeartbeatMessage?: (
 		callback: (message?: HeartbeatMessageModel) => void,
 	) => void;
+
+	onEmojiMessage?: (callback: (message?: EmojiMessageModel) => void) => void;
 }

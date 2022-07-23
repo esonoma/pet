@@ -6,6 +6,7 @@ import {
 	ImageMessageModel,
 	TextMessageModel,
 	BinaryMessageModel,
+	EmojiMessageModel,
 } from "./messages";
 import { SendMessage } from "./SendMessage";
 import { ListenMessage } from "./ListenMessage";
@@ -26,6 +27,7 @@ export default class WebsocketClient
 		[HeartbeatMessageModel.dispatchType]:
 			HeartbeatMessageModel.registerHookName,
 		[BinaryMessageModel.dispatchType]: BinaryMessageModel.registerHookName,
+		[EmojiMessageModel.dispatchType]: EmojiMessageModel.registerHookName,
 	};
 
 	// SendMessage 提供的标识符
@@ -90,6 +92,18 @@ export default class WebsocketClient
 		this.send(data);
 	}
 
+	// emojiMessage (发送Emoji表情)
+	public sendEmojiMessage(
+		from: string,
+		to: string | string[],
+		data: string | ArrayBuffer,
+		// ext?: Record<UniversalKeys, unknown>,
+	) {
+		const emoji = new EmojiMessageModel(from, to, data);
+		this.send(emoji);
+		return emoji;
+	}
+
 	/**
 	 * ListenMessage
 	 */
@@ -131,5 +145,10 @@ export default class WebsocketClient
 	// onHeartbeatMessage (心跳消息)
 	onHeartbeatMessage(callback: (message: HeartbeatMessageModel) => void) {
 		this.on(HeartbeatMessageModel.registerHookName, callback);
+	}
+
+	// onEmojiMessage (Emoji表情消息)
+	onEmojiMessage(callback: (message: EmojiMessageModel) => void) {
+		this.on(EmojiMessageModel.registerHookName, callback);
 	}
 }
