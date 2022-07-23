@@ -23,7 +23,7 @@ update_env_file() {
 create_env_file
 
 # github secrets are stored in the .env file
-update_env_file "@SECRET_FUNDEBUG_SHOP_APIKEY" 'secrets.FUNDEBUG_SHOP_APIKEY'
+update_env_file "@SECRET_FUNDEBUG_SHOP_APIKEY" '${secrets.FUNDEBUG_SHOP_APIKEY}'
 
 if [ -z "$secrets" ]; then
     echo "${secrets}"
