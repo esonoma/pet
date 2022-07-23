@@ -29,9 +29,7 @@ jobs:
           FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
           PROD_SERVICE_URL: ${{ secrets.PROD_SERVICE_URL }}
         run: |
-          sed -i "s/@FUNDEBUG_SHOP_APIKEY/$FUNDEBUG_SHOP_APIKEY/" .env;
-          sed -i "s/@BASE_SERVICE_URL/$PROD_SERVICE_URL/" .env;
-          
+          sed "s/@FUNDEBUG_SHOP_APIKEY/$FUNDEBUG_SHOP_APIKEY/; s/@BASE_SERVICE_URL/$PROD_SERVICE_URL/" .env
           cat .env
       
       - name: setup nodejs environment
