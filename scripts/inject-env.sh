@@ -24,8 +24,8 @@
 
 # github secrets are stored in the .env file
 # update_env_file "@SECRET_FUNDEBUG_SHOP_APIKEY" "$FUNDEBUG_SHOP_APIKEY"
-sed -i "s/@FUNDEBUG_SHOP_APIKEY/$FUNDEBUG_SHOP_APIKEY/" .env
-sed -i "s/@BASE_SERVICE_URL/$PROD_SERVICE_URL/" .env
+sed -i '' "s/@FUNDEBUG_SHOP_APIKEY/$FUNDEBUG_SHOP_APIKEY/" .env |
+sed -i '' "s/@BASE_SERVICE_URL/$PROD_SERVICE_URL/" .env
 
 echo "--------- echo replaced env variables ---------"
 cat .env
