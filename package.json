@@ -23,7 +23,8 @@
 		"lint:fix": "pnpm prettier && pnpm lint:stylelint --fix",
 		"lint:eslint": "eslint --ext .js,.vue,.tsx,.jsx,.ts src",
 		"prettier": "prettier --write 'src/**/*.{js,vue,tsx,jsx,ts}'",
-		"lint:stylelint": "stylelint 'src/*.{css,scss,sass,less,stylus}'"
+		"lint:stylelint": "stylelint 'src/*.{css,scss,sass,less,stylus}'",
+		"inject:env": "sh ./scripts/inject-env.sh"
 	},
 	"husky": {
 		"hooks": {
