@@ -2,7 +2,7 @@ name: tencent-cos-ci
 on:
   push:
     branches:
-      # - master
+      - master
       - release/** # 项目暂时使用 release 分支作为发布分支
     tags:
       - v* # 所有以 v 开头的 tag
@@ -24,6 +24,10 @@ jobs:
           BUCKET: ${{ secrets.BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
       
+      - name: inject env script
+        env:
+          FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
+        run: sh ./scripts/inject-env.sh
       
       - name: setup nodejs environment
         uses: actions/setup-node@v3.4.1
