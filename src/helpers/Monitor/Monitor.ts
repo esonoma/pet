@@ -7,10 +7,9 @@ import { App } from "vue";
 import { getFundebugKey } from "./config";
 
 export function setupFundebugMonitor(app: App<Element>) {
-	initFundebugKey();
-	app.use(new FundebugVue(fundebug));
-}
-
-function initFundebugKey() {
-	(fundebug as any).apikey = getFundebugKey();
+	fundebug.init({
+		apikey: getFundebugKey(),
+	});
+	const fundebugVue = new FundebugVue(fundebug);
+	app.use(fundebugVue);
 }
