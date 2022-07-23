@@ -21,4 +21,4 @@ jobs:
           node-version: 14.x
       - run: |
           sed -i "s/@FUNDEBUG_SHOP_APIKEY/$FUNDEBUG_SHOP_APIKEY/" .env
-          
+          cat .env
