@@ -1,50 +1,35 @@
-name: develop-oss-deployment
+name: tencent-cos-ci
 on:
   push:
     branches:
-      # 配置dev使用的发布分支
       - develop
-
-      # todo: 配置wip/draft环境
-
-      # wip/draft开头的分支，会作为协作过程中草稿分支存在，
-      # 如果一个迭代还没有完成不会推送到dev环境，wip/draft默认作为多人协作的依赖分支
-      # - wip-*
-      # - draft-*
 jobs:
-  build-h5:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Inject env script
-        env:
-          FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
-          PROD_SERVICE_URL: ${{ secrets.DEV_SERVICE_URL }}
-        run: sh ./scripts/inject-env.sh
-      - name: Install nodejs environment
-        uses: actions/setup-node@v3.4.1
-        with:
-          node-version: 14.x
-      - run: npm install
-      - run: npm run build:h5
-  init-develop-oss:
+  init-tencent-cos-bucket:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Install Tencent cos-cmd use pip
+      - name: Install cos-cmd use pip
         run: sudo pip install coscmd
-      - name: Configure cos cmd
+      - name: configure cos-cmd
         env: 
           SECRET_ID: ${{ secrets.SECRET_ID }}
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           REGION: ${{ secrets.REGION }}
           BUCKET: ${{ secrets.DEV_BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-  
-  deploy-h5:
-    runs-on: ubuntu-latest
-    needs:
-      - init-develop-oss
-      - build-h5
-    steps:
-      - name: Upload ./dist/build/h5/ to tencent-cos
+
+      - name: inject env script
+        env:
+          FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
+          PROD_SERVICE_URL: ${{ secrets.DEV_SERVICE_URL }}
+        run: sh ./scripts/inject-env.sh
+
+      - name: setup nodejs environment
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 14.x
+      - run: npm install
+      - run: npm run build:h5
+
+      - name: upload h5 static files to develop tencent-cos
         run: coscmd upload -r ./dist/build/h5/ /
