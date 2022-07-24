@@ -3,6 +3,7 @@ import {
 	FileMessageModel,
 	HeartbeatMessageModel,
 	ImageMessageModel,
+	SessionMessageModel,
 	TextMessageModel,
 } from "./messages";
 
@@ -19,4 +20,8 @@ export interface ListenMessage {
 	) => void;
 
 	onEmojiMessage?: (callback: (message?: EmojiMessageModel) => void) => void;
+
+	onSessionMessage?: (
+		callback: (message?: SessionMessageModel) => void,
+	) => void;
 }

@@ -5,5 +5,5 @@ export class BinaryMessageModel extends BaseMessage {
 
 	static dispatchType = "binary";
 
-	static registerHookName = "onBinaryMessage";
+	static registerHookName = "binaryMessage";
 }

@@ -5,5 +5,5 @@ export class ImageMessageModel extends BaseMessage {
 
 	static dispatchType = "image";
 
-	static registerHookName = "onImageMessage";
+	static registerHookName = "imageMessage";
 }

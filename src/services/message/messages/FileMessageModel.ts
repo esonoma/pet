@@ -5,5 +5,5 @@ export class FileMessageModel extends BaseMessage {
 
 	static dispatchType = "file";
 
-	static registerHookName = "onFileMessage";
+	static registerHookName = "fileMessage";
 }
