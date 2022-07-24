@@ -33,7 +33,7 @@ jobs:
         env:
           FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
           PROD_SERVICE_URL: ${{ secrets.DEV_SERVICE_URL }}
-        run: sh ./scripts/inject-env.sh
+      - run: sh ./scripts/inject-env.sh
   
   build-h5:
     runs-on: ubuntu-latest
@@ -54,5 +54,5 @@ jobs:
       - build-h5
     steps:
       - name: Upload ./dist/build/h5/ to tencent-cos
-        run: coscmd upload -r ./dist/build/h5/ /
+      - run: coscmd upload -r ./dist/build/h5/ /
   
