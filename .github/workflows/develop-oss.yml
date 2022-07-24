@@ -28,6 +28,8 @@ jobs:
   
   build-h5:
     runs-on: ubuntu-latest
+    needs:
+      - init-develop-oss
     steps:
       - name: Inject env script
         env:
