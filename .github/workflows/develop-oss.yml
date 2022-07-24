@@ -1,35 +1,29 @@
-name: prod-tencent-cos
+name: develop-tencent-cos
 on:
   push:
     branches:
-      - master
-      - release/** # 项目暂时使用 release 分支作为发布分支
-    tags:
-      - v* # 所有以 v 开头的 tag
+      - develop
 jobs:
   init-tencent-cos-bucket:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v3
-
-      - name: setup cos-cmd tool
+      - name: Install cos-cmd use pip
         run: sudo pip install coscmd
-      
-      - name: config cos cmd
+      - name: configure cos-cmd
         env: 
           SECRET_ID: ${{ secrets.SECRET_ID }}
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           REGION: ${{ secrets.REGION }}
-          BUCKET: ${{ secrets.BUCKET }}
+          BUCKET: ${{ secrets.DEV_BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-      
+
       - name: inject env script
         env:
           FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
-          PROD_SERVICE_URL: ${{ secrets.PROD_SERVICE_URL }}
+          PROD_SERVICE_URL: ${{ secrets.DEV_SERVICE_URL }}
         run: sh ./scripts/inject-env.sh
-      
+
       - name: setup nodejs environment
         uses: actions/setup-node@v3.4.1
         with:
@@ -37,5 +31,5 @@ jobs:
       - run: npm install
       - run: npm run build:h5
 
-      - name: upload h5 static files to tencent-cos
+      - name: upload h5 static files to develop tencent-cos
         run: coscmd upload -r ./dist/build/h5/ /
