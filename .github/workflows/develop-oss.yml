@@ -1,4 +1,4 @@
-name: tencent-cos-ci
+name: develop-tencent-cos
 on:
   push:
     branches:

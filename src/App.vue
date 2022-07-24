@@ -2,6 +2,8 @@
 import { onLaunch, onShow, onHide, onError } from "@dcloudio/uni-app";
 import { getUserInfoService } from "@domains/user.service";
 
+console.log("App.vue meta", import.meta);
+
 function startGuide(guideURL: string) {
 	uni.redirectTo({
 		url: guideURL,
