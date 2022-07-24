@@ -12,6 +12,20 @@ on:
       # - wip-*
       # - draft-*
 jobs:
+  build-h5:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inject env script
+        env:
+          FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
+          PROD_SERVICE_URL: ${{ secrets.DEV_SERVICE_URL }}
+        run: sh ./scripts/inject-env.sh
+      - name: Install nodejs environment
+        uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 14.x
+      - run: npm install
+      - run: npm run build:h5
   init-develop-oss:
     runs-on: ubuntu-latest
     steps:
@@ -26,23 +40,6 @@ jobs:
           BUCKET: ${{ secrets.DEV_BUCKET }}
         run: coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
   
-  build-h5:
-    runs-on: ubuntu-latest
-    needs:
-      - init-develop-oss
-    steps:
-      - name: Inject env script
-        env:
-          FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
-          PROD_SERVICE_URL: ${{ secrets.DEV_SERVICE_URL }}
-        run: sh ./scripts/inject-env.sh
-      - name: Install nodejs environment
-        uses: actions/setup-node@v3.4.1
-        with:
-          node-version: 14.x
-      - run: npm install
-      - run: npm run build:h5
-
   deploy-h5:
     runs-on: ubuntu-latest
     needs:
@@ -51,4 +48,3 @@ jobs:
     steps:
       - name: Upload ./dist/build/h5/ to tencent-cos
         run: coscmd upload -r ./dist/build/h5/ /
-  
