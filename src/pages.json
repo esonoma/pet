@@ -2,6 +2,9 @@
   "titleNView": false, 
   "pages": [
     { "path": "pages/index/index" },
+    { "path": "pages/community/index" },
+    { "path": "pages/message/index" },
+    { "path": "pages/profile/index" },
     { "path": "pages/account/index" },
     { "path" : "pages/guide/guide"}
   ],
