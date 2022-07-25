@@ -1,5 +1,5 @@
 <template>
-	<view v-bind="nativeProps" class="guide-item">
+	<view class="guide-item">
 		{{ $props }}
 	</view>
 </template>

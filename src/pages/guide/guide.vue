@@ -5,10 +5,8 @@
 		class="swiper-guide-wrap"
 		:sources="guides"
 		:onLastItem="handlerLastItem"
-		:nativeProps="{
-			acceleration: true,
-			'easing-function': 'linear',
-		}"
+		easing-function="linear"
+		autoplay
 	>
 		<template #swiperItem="{ swiperItem, index }">
 			<guide-item :data="swiperItem" :index="index" />
