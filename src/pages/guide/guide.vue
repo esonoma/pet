@@ -32,6 +32,6 @@ function handlerLastItem(event: UniSwiperChangeEvent) {
 }
 </script>
 
-<style lang="less" scoped>
-@import "./guide.less";
+<style lang="scss" scoped>
+@import "./guide.scss";
 </style>

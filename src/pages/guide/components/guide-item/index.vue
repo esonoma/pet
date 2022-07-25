@@ -1,6 +1,8 @@
 <template>
 	<view class="guide-item">
-		{{ $props }}
+		<text>
+			{{ $props }}
+		</text>
 	</view>
 </template>
 
@@ -34,6 +36,6 @@ defineProps({
 });
 </script>
 
-<style scoped lang="less">
-@import "./guide-item.less";
+<style scoped lang="scss">
+@import "./guide-item.scss";
 </style>
