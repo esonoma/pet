@@ -72,7 +72,7 @@ function renderSlotContent(position: "left" | "center" | "right"): boolean {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .header-view {
 	height: 100upx;
 	padding: 10upx 30upx;

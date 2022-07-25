@@ -111,4 +111,3 @@ function getKeys(swiperItem: SwiperItem, index: number): string | number {
 	return index;
 }
 </script>
-<style lang="less"></style>
