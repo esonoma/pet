@@ -11,8 +11,8 @@
 // #endif
 </script>
 
-<style lang="less">
-@import "./status-bar-polyfill.less";
+<style lang="scss">
+@import "./status-bar-polyfill.scss";
 /* #ifdef MP-WEIXIN */
 .status-bar {
 	height: var(--status-bar-height);

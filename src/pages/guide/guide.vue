@@ -5,10 +5,8 @@
 		class="swiper-guide-wrap"
 		:sources="guides"
 		:onLastItem="handlerLastItem"
-		:nativeProps="{
-			acceleration: true,
-			'easing-function': 'linear',
-		}"
+		easing-function="linear"
+		autoplay
 	>
 		<template #swiperItem="{ swiperItem, index }">
 			<guide-item :data="swiperItem" :index="index" />
@@ -34,6 +32,6 @@ function handlerLastItem(event: UniSwiperChangeEvent) {
 }
 </script>
 
-<style lang="less" scoped>
-@import "./guide.less";
+<style lang="scss" scoped>
+@import "./guide.scss";
 </style>
