@@ -9,14 +9,14 @@
 		/>
 		<normal-category :categories="categories" :onClick="onItemClick" />
 	</view>
-	<fixed-top-bar />
+	<!-- <fixed-top-bar /> -->
 </template>
 
 <script setup lang="ts">
 import appHeader from "@components/app-header/index.vue";
 import statusBar from "@components/status-bar/index.vue";
 import normalCategory from "@components/category/normal-category.vue";
-import fixedTopBar from "@components/top-bar/fixed-top-bar.vue";
+// import fixedTopBar from "@components/top-bar/fixed-top-bar.vue";
 import { reactive } from "vue";
 
 const categories = reactive([

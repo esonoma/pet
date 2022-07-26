@@ -21,12 +21,10 @@ defineProps({
 
 <style lang="scss" scoped>
 .app-header {
-	height: 120rpx;
-	line-height: 120rpx;
 	color: rgb(45, 45, 45);
-	font-family: Poppins;
-	font-weight: 600;
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+	font-weight: 500;
 	font-size: 48rpx;
-	padding: 0 30rpx;
+	padding: 60rpx 30rpx;
 }
 </style>
