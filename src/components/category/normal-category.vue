@@ -9,9 +9,9 @@
 							src="https://cdn.logo.com/hotlink-ok/logo-social.png"
 						/>
 					</view>
-					<text class="category--item-name">{{
-						categoryProps.category.title
-					}}</text>
+					<text class="category--item-name">
+						{{ categoryProps.category.title }}
+					</text>
 				</view>
 			</template>
 		</base-category>
@@ -53,7 +53,7 @@ function onClick(categoryProps) {
 	display: flex;
 	align-items: center;
 	background-color: aliceblue;
-	padding: 10rpx 20rpx;
+	padding: 8rpx 20rpx;
 	border-radius: 40rpx;
 
 	.category-item-icon-box {
