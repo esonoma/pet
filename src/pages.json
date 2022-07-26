@@ -1,12 +1,30 @@
 {
   "titleNView": false,
   "pages": [
-    { "path": "pages/index/index" },
-    { "path": "pages/community/index" },
-    { "path": "pages/message/index" },
-    { "path": "pages/profile/index" },
-    { "path": "pages/account/index" },
-    { "path" : "pages/guide/guide"}
+    {
+      "path": "pages/account/user-login/index"
+    },
+    {
+      "path": "pages/account/user-regester/index"
+    },
+    {
+      "path": "pages/index/index"
+    },
+    {
+      "path": "pages/community/index"
+    },
+    {
+      "path": "pages/message/index"
+    },
+    {
+      "path": "pages/profile/index"
+    },
+    {
+      "path": "pages/account/index"
+    },
+    {
+      "path": "pages/guide/guide"
+    }
   ],
   "globalStyle": {
     "navigationStyle": "custom"
@@ -18,23 +36,27 @@
     }
   },
   "tabBar": {
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"text": "首页"
-			},
-			{
-				"pagePath": "pages/community/index",
-				"text": "社区"
-			},
+    "list": [
       {
-				"pagePath": "pages/message/index",
-				"text": "消息"
-			},
+        "pagePath": "pages/account/user-login/index",
+        "text": "test"
+      },
       {
-				"pagePath": "pages/profile/index",
-				"text": "个人"
-			}
-		]
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/community/index",
+        "text": "社区"
+      },
+      {
+        "pagePath": "pages/message/index",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "个人"
+      }
+    ]
   }
 }
