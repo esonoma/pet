@@ -18,3 +18,16 @@ defineProps({
 	},
 });
 </script>
+<script lang="ts">
+// virtualHost
+// ref: https://uniapp.dcloud.io/tutorial/vue3-api.html#%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE
+export default {
+	name: "category",
+	options: {
+		multipleSlots: true,
+		styleIsolation: "isolated",
+		addGlobalClass: true,
+		virtualHost: true,
+	},
+};
+</script>

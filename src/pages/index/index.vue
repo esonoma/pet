@@ -23,14 +23,17 @@ const categories = reactive([
 	{
 		id: 1,
 		title: "Cats",
+		icon: "https://cdn.logo.com/hotlink-ok/logo-social.png",
 	},
 	{
 		id: 2,
 		title: "Dogs",
+		icon: "https://cdn.logo.com/hotlink-ok/logo-social.png",
 	},
 	{
 		id: 3,
 		title: "Brides",
+		icon: "https://cdn.logo.com/hotlink-ok/logo-social.png",
 	},
 	{
 		id: 4,
