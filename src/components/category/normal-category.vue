@@ -3,12 +3,16 @@
 		<base-category :categories="categories">
 			<template #category="categoryProps">
 				<view class="category-item" @click="onClick(categoryProps)">
-					<view class="category-item-icon-box">
-						<img
-							class="category-item-icon"
-							src="https://cdn.logo.com/hotlink-ok/logo-social.png"
-						/>
-					</view>
+					<responsive-image
+						width="60rpx"
+						height="60rpx"
+						:container-style="{
+							borderRadius: '30rpx',
+							overflow: 'hidden',
+						}"
+						:visible="!!categoryProps.category.icon"
+						:image="categoryProps.category.icon"
+					/>
 					<text class="category--item-name">
 						{{ categoryProps.category.title }}
 					</text>
@@ -20,6 +24,7 @@
 
 <script setup lang="ts">
 import baseCategory from "./index.vue";
+import responsiveImage from "../image/responsive-image.vue";
 
 const props = defineProps({
 	categories: {
@@ -44,8 +49,10 @@ function onClick(categoryProps) {
 <style scoped lang="scss">
 .category-container {
 	margin: 30rpx 0;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	// justify-content: space-between;
+	flex-wrap: wrap;
+	// grid-template-columns: repeat(3, 1fr);
 	gap: 16rpx;
 }
 
