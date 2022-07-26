@@ -39,9 +39,11 @@ export const menuConfig = reactive([
 export function getActiveMenuId() {
 	return activeMenuId.value;
 }
-
 export function setActiveMenuId(id: number) {
 	activeMenuId.value = id;
+}
+export function isActiveMenu(id: number) {
+	return activeMenuId.value === id;
 }
 
 export function jumpToMenuPath(id: number) {

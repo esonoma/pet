@@ -7,7 +7,7 @@
 			:class="{
 				'custom-top-bar-item-active': menuItem.id === activeMenuId,
 			}"
-			@click="onMenuItemClick(menuItem.id)"
+			@tap="onMenuItemClick(menuItem.id)"
 		>
 			<text>
 				{{ menuItem.title }}
@@ -22,9 +22,13 @@ import {
 	activeMenuId,
 	setActiveMenuId,
 	jumpToMenuPath,
+	isActiveMenu,
 } from "./menus";
 
 function onMenuItemClick(menuId: string) {
+	if (isActiveMenu(menuId)) {
+		return;
+	}
 	jumpToMenuPath(menuId);
 	setActiveMenuId(menuId);
 }
