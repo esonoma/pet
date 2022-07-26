@@ -1,2 +1,4 @@
 // TODO: request
-export default class HttpClient {}
+import Http from "./requests";
+
+export default class HttpClient extends Http {}
