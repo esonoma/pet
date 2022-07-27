@@ -1,12 +1,30 @@
 <template>
 	<status-bar />
+
+	<view class="fake-btn fake-btn-switch-language" @tap="tapSwitchLanguage">
+		<text>{{ $t("common.locales.switchLanguage") }}</text>
+	</view>
+
 	<view class="community-page-content">
-		<text>Community s</text>
+		<text>{{ $t("community.communityTitle") }}</text>
 	</view>
 </template>
 
 <script lang="ts" setup>
+import { useI18n } from "vue-i18n";
 import statusBar from "@components/status-bar/index.vue";
+import { enabledLocales } from "@locales";
+
+const i18n = useI18n();
+function tapSwitchLanguage() {
+	i18n.locale.value = getTargetLanguage(i18n.locale.value);
+}
+function getTargetLanguage(currentLanguage: string) {
+	if (currentLanguage === enabledLocales.ZH_CN) {
+		return enabledLocales.EN_US;
+	}
+	return enabledLocales.ZH_CN;
+}
 </script>
 <style lang="scss">
 page {
@@ -28,5 +46,15 @@ page {
 .community-page-content {
 	height: 30%;
 	background-color: #c0caad; // 晨蓝
+}
+
+.fake-btn-switch-language {
+	width: 160rpx;
+	height: 40rpx;
+	line-height: 40rpx;
+	border-radius: 20rpx;
+	font-size: 12px;
+	background-color: aliceblue;
+	text-align: center;
 }
 </style>
