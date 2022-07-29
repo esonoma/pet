@@ -6,5 +6,4 @@
     -   [production Tencent OSS](https://shop-1310500802.cos-website.ap-chengdu.myqcloud.com/#/)
     -   [develop Tencent OSS](https://dev-shop-1310500802.cos-website.ap-chengdu.myqcloud.com/#/) 
 -   Vercel:
-    -   production: https://uni-shop.vercel.app
-    -   develop: https://uni-shop-{commithash:8}-chagspace.vercel.app/#/
+    -   [production](https://uni-shop.vercel.app) 
