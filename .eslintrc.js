@@ -87,5 +87,6 @@ module.exports = {
 		// ],
 
 		"import/no-unresolved": "off",
+		"no-param-reassign": "off",
 	},
 };
