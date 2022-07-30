@@ -42,6 +42,7 @@
 		"@dcloudio/uni-mp-weixin": "3.0.0-alpha-3050220220719002",
 		"@dcloudio/uni-ui": "^1.4.19",
 		"axios": "^0.27.2",
+		"nanoid": "^4.0.0",
 		"pinia": "^2.0.16",
 		"vue": "^3.2.37",
 		"vue-i18n": "^9.1.9",

@@ -1,2 +1,4 @@
-// TODO: request
-export default class HttpClient {}
+import http from "./http";
+
+export * from "./http";
+export default http;

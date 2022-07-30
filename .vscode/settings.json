@@ -6,6 +6,7 @@
 	"html.autoClosingTags": true, // auto close tags
 	"html.autoCreateQuotes": true,
 	"editor.linkedEditing": true,
+	"editor.rulers": [80],
 	"cSpell.words": [
 		"dcloudio",
 		"fundebug",
