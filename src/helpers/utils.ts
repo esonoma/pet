@@ -26,3 +26,14 @@ export function createUuid() {
 		return v.toString(16);
 	});
 }
+
+// class mixin
+interface AbstractAnyClass<ClassValue = any> {
+	new (...args: any[]): ClassValue;
+}
+export function createClassExtendMixin<
+	C extends AnyObject,
+	T extends AbstractAnyClass<C> = AbstractAnyClass<any>,
+>(SuperClass: T): T {
+	return class AwesomeExtendSuperClass extends SuperClass {};
+}
