@@ -4,7 +4,7 @@ import { getUserInfoService } from "@domains/user.service";
 
 import http from "@http/index";
 
-http.get("/todos/1").then((res) => {
+http.get("/api/v1/users").then((res) => {
 	console.log(res);
 });
 

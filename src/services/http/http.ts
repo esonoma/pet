@@ -7,7 +7,7 @@ import { getServerURL, globalAPITimeout } from "@/config";
 export { applyCancelId, applyCancelRequest } from "./interceptors/cancel";
 
 const axiosInstance = axios.create({
-	withCredentials: true,
+	// withCredentials: true,
 	baseURL: getServerURL(),
 	headers: {
 		timeout: globalAPITimeout,
