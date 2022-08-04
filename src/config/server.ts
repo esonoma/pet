@@ -14,6 +14,7 @@ export const globalAPITimeout = 10 * 1000;
 // 2. 即使一些居心叵测的同学拿到我们的代码，也不一定可以访问到我们的服务
 // export const LocalServer = "https://localhost:8090";
 export const LocalServer = "http://petapp.nat300.top"; // 使用内网穿透服务转发到真实的服务地址
+export const serverVersion = "/api/v1";
 
 // --------------------------------------------------
 // 默认的 PROD 只能证明你是通过 build 脚本进行构建的
@@ -44,7 +45,7 @@ export function isBuildThroughCI() {
 // 这意味着：本地开发并不需要知道真实的服务地址是什么
 export function getServerURL(): string {
 	if (isBuildThroughCI()) {
-		return appRuntimeEnv.VITE_SERVICE_URL;
+		return appRuntimeEnv.VITE_SERVICE_URL + serverVersion;
 	}
-	return LocalServer;
+	return LocalServer + serverVersion;
 }

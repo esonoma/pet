@@ -2,12 +2,6 @@
 import { onLaunch, onShow, onHide, onError } from "@dcloudio/uni-app";
 import { getUserInfoService } from "@domains/user.service";
 
-import http from "@http/index";
-
-http.get("/api/v1/users").then((res) => {
-	console.log(res);
-});
-
 function startGuide(guideURL: string) {
 	uni.redirectTo({
 		url: guideURL,
