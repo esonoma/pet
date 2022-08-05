@@ -7,7 +7,6 @@ export function getUserInfoService() {
 		isNewUser: false,
 	});
 }
-
 export function createAccountService(accountData: {
 	username: string;
 	password: string;
