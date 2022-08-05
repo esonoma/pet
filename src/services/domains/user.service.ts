@@ -14,3 +14,14 @@ export function createAccountService(accountData: {
 }) {
 	return http.post("/users", accountData);
 }
+
+export function loginService(loginData: {
+	username: string;
+	password: string;
+}) {
+	return http.post("/users/login", loginData);
+}
+
+export function getProfileService() {
+	return http.get("/users/123");
+}
