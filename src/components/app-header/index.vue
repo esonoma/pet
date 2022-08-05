@@ -25,6 +25,6 @@ defineProps({
 	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 	font-weight: 500;
 	font-size: 48rpx;
-	padding: 60rpx 30rpx;
+	padding: 60rpx 0rpx;
 }
 </style>

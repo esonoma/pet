@@ -7,7 +7,7 @@ import { getServerURL, globalAPITimeout } from "@/config";
 export { applyCancelId, applyCancelRequest } from "./interceptors/cancel";
 
 const axiosInstance = axios.create({
-	// withCredentials: true,
+	withCredentials: true, // 开启才能跨域带cookie
 	baseURL: getServerURL(),
 	headers: {
 		timeout: globalAPITimeout,

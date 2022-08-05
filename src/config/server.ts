@@ -13,9 +13,8 @@ export const globalAPITimeout = 10 * 1000;
 // 1. 即使是真实的dev环境, 我们也可以在 CI 中进行动态的控制
 // 2. 即使一些居心叵测的同学拿到我们的代码，也不一定可以访问到我们的服务
 
-// export const LocalServer = "https://localhost:8090"; // 本地开发时使用
+export const LocalServer = "http://127.0.0.1:8080"; // 本地开发时使用
 // export const LocalServer = "http://petapp.nat300.top"; // 使用内网穿透服务转发到真实的服务地址（真实本地调试使用）
-export const LocalServer = "http://petapp.tooo.top/server"; // 需要删除（仅调试）
 export const serverVersion = "/api/v1";
 
 // --------------------------------------------------

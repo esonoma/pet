@@ -1,5 +1,5 @@
 import { ref } from "vue";
-import { createAccountService } from "@domains/user.service";
+import { createAccountService, loginService } from "@domains/user.service";
 
 export function useCreateAccount() {
 	const createAccountResult = ref({});
@@ -16,6 +16,16 @@ export function useCreateAccount() {
 		},
 		clear() {
 			createAccountResult.value = {};
+		},
+	};
+}
+
+export function useLogin() {
+	const loginResult = ref({});
+	return {
+		data: loginResult,
+		run: async (loginData: { username: string; password: string }) => {
+			loginResult.value = await (await loginService(loginData)).data;
 		},
 	};
 }
