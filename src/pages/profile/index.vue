@@ -9,25 +9,23 @@
 		</button>
 		<view>
 			<text>
-				{{ profile }}
+				{{ data }}
 			</text>
 		</view>
 	</view>
 </template>
 <script lang="ts" setup>
 import { ref } from "vue";
-import { createAccountService } from "@/services/domains/user.service";
+import { useCreateAccount } from "@/hooks/userHooks";
 
-const profile = ref({});
+const { data, run } = useCreateAccount();
 const username = ref("test_username");
 
 function createAccount() {
-	createAccountService({
+	run({
 		username: username.value,
 		password: "123456",
 		email: `${username.value}@petapp.com`,
-	}).then((response) => {
-		profile.value = response.data;
 	});
 }
 </script>
