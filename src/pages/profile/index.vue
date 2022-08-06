@@ -43,6 +43,9 @@
 			<button type="button" @tap="getProfileService">
 				<text>GetProfile</text>
 			</button>
+
+			<button type="button" @tap="logoutService">Logout</button>
+			<button type="button" @tap="getBuckets">GetBuckets</button>
 		</view>
 	</view>
 </template>
@@ -52,7 +55,8 @@ import { ref } from "vue";
 import statusBar from "@components/status-bar/index.vue";
 import appHeader from "@components/app-header/index.vue";
 
-import { getProfileService } from "@domains/user.service";
+import { getProfileService, logoutService } from "@domains/user.service";
+import { getBuckets } from "@domains/file.service";
 import { useCreateAccount, useLogin } from "@/hooks/userHooks";
 
 const username = ref("");

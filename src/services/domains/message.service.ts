@@ -75,3 +75,7 @@ export function useGetMessagesWithState(
 		metaInfoResponse,
 	};
 }
+
+export function getMessage() {
+	return http.get("/messages");
+}

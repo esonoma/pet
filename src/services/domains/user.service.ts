@@ -23,5 +23,9 @@ export function loginService(loginData: {
 }
 
 export function getProfileService() {
-	return http.get("/users/123");
+	return http.get("/users/1555488548449161216");
+}
+
+export function logoutService() {
+	return http.post("/users/logout");
 }
