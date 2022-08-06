@@ -25,7 +25,9 @@ export function useLogin() {
 	return {
 		data: loginResult,
 		run: async (loginData: { username: string; password: string }) => {
-			loginResult.value = await (await loginService(loginData)).data;
+			loginResult.value = await (
+				await loginService(loginData)
+			).data.content;
 		},
 	};
 }
