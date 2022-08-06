@@ -1,21 +1,20 @@
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
+import fs from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [uni()],
-	// css: {
-	// 	preprocessorOptions: {
-	// 		less: {
-	// 			javascriptEnabled: true,
-	// 			modifyVars: {
-	// 				// https://github.com/ant-design/ant-design/issues/23624
-	// 				// less 变量覆盖
-	// 				hack: `true; @import "~@/common/stylesheets/variable.less";`,
-	// 			},
-	// 		},
-	// 	},
-	// },
+	server: {
+		https: {
+			key: fs.readFileSync(
+				`${__dirname}/scripts/certificates/petapp-key.pem`,
+			),
+			cert: fs.readFileSync(
+				`${__dirname}/scripts/certificates/petapp.pem`,
+			),
+		},
+	},
 
 	resolve: {
 		alias: {
