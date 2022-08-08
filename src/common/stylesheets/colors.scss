@@ -1,0 +1,12 @@
+// theme
+$app-light-main-theme-color: #6F588F; // 主要主题颜色
+$app-light-shallow-theme-color: #827397; // 浅的主题色
+$app-light-unimportant-theme-color: #D9D9D9; // 不重要的主题色（灰色背景）
+
+$app-light-label-bg-color: #FF5E5E; // 重要的主题色（白色背景）
+
+// font color
+$app-light-main-text-color: #5F5B5B; // 标题类主要的字体颜色
+$app-light-outstand-text-color: #FFFFFF; // 标题类突出的字体颜色（主要主题是上的颜色）
+$app-light-label-text-color: $app-light-outstand-text-color; // 标题类不重要的字体颜色（浅的主题色）
+$app-light-unimportant-text-color: #827397; // 标题类不重要的字体颜色（浅的主题色）

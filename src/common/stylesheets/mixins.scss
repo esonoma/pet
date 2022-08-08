@@ -1,0 +1,24 @@
+@mixin app-clean-line {
+    border: none;
+    outline: none;
+}
+
+@mixin app-main-them-visual-effect {
+    color: $app-light-outstand-text-color;
+    background-color: $app-light-main-theme-color;
+}
+
+// main -> primary
+@mixin app-main-button {
+    @include app-clean-line;
+    width: $app-main-button-width-size;
+    height: $app-main-button-height-size;
+    line-height: $app-main-button-height-size;
+    border-radius: calc($app-main-button-height-size / 2);
+
+    font-size: 14px;
+    @include app-main-them-visual-effect;
+    font-family: $emphasized-content-font-family;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
