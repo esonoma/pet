@@ -3,7 +3,7 @@
 	height: 100%;
 
 	.guide-top-container {
-		margin-top: 120rpx;
+		margin-top: 100rpx;
 		width: 100%;
 		height: 50%;
 
@@ -54,7 +54,7 @@
 
 	.guide-navigate-lines {
 		position: fixed;
-		bottom: 20%;
+		bottom: 16%;
 		width: 100%;
 		display: flex;
 		flex-direction: row;
@@ -77,7 +77,7 @@
 	.guide-item-actions-container {
 		width: 100%;
 		position: fixed;
-		bottom: 9%;
+		bottom: 6%;
 		.guide-item-action {
 			@include app-main-button;
 		}
