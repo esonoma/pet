@@ -3,10 +3,7 @@ import { onLaunch, onShow, onHide, onError } from "@dcloudio/uni-app";
 import { getUserInfoService } from "@domains/user.service";
 
 function startGuide(guideURL: string) {
-	uni.redirectTo({
-		url: guideURL,
-		success: () => uni.setStorageSync("guide_status", true),
-	});
+	uni.redirectTo({ url: guideURL });
 }
 async function startNewUserGuide() {
 	const guideStatus = uni.getStorageSync("guide_status");

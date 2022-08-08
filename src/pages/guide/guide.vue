@@ -37,7 +37,10 @@ function nextGuidePage() {
 	active.value += 1;
 }
 const goHomePage = () => {
-	uni.reLaunch({ url: "/pages/index/index" });
+	uni.reLaunch({
+		url: "/pages/index/index",
+		success: () => uni.setStorageSync("guide_status", true),
+	});
 };
 const onChange = (event: UniSwiperChangeEvent) => {
 	active.value = event.detail.current;
