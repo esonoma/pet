@@ -51,7 +51,7 @@ const guides = reactive([
 		id: 0,
 		type: "rich",
 		image: {
-			src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=1.00xw:0.749xh;0,0.154xh&resize=980:*",
+			src: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
 			alt: "guide-item-image",
 		},
 		title: { content: "Find the Pet you love" },
@@ -63,7 +63,7 @@ const guides = reactive([
 		id: 1,
 		type: "rich",
 		image: {
-			src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=1.00xw:0.749xh;0,0.154xh&resize=980:*",
+			src: "https://cdn.pixabay.com/photo/2015/11/16/14/43/cat-1045782__340.jpg",
 			alt: "guide-item-image",
 		},
 		title: { content: "Find like-minded friends nearby" },
@@ -74,7 +74,7 @@ const guides = reactive([
 		id: 2,
 		type: "rich",
 		image: {
-			src: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg?crop=1.00xw:0.749xh;0,0.154xh&resize=980:*",
+			src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRp2rcEm8LK_ecYUlTn87bP_PK1zkpKVDRDZwMlgtFxHRPnJqoZkrWOhVdNaLZ5VwT_zWM&usqp=CAU",
 			alt: "guide-item-image",
 		},
 		title: { content: "Find your new friends" },
