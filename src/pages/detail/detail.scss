@@ -1,0 +1,139 @@
+$pet-viewport-height: 100%;
+$pet-viewport-width: 100%;
+
+// component scss variables
+$pet-gallery-normal-height: 45%; // 普通模式下(未被拉起)的高度
+$pet-gallery-large-height: 30%; // 拉起模式下的高度
+
+$pet-introduction-normal-height: 60%; // 普通模式下(未被拉起)的宽度
+$pet-introduction-large-height: calc($pet-viewport-height - $pet-gallery-large-height); // 拉起模式下的宽度
+
+@mixin extends-viewport {
+  height: $pet-viewport-height;
+  width: $pet-viewport-width;
+}
+
+page {
+    @include extends-viewport;
+
+    .page-detail-container {
+       @include extends-viewport;
+       position: relative;
+
+        .actions {
+            width: $pet-viewport-width;
+            z-index: 2;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            view {
+                margin: 40rpx 30rpx;
+                width: 58rpx;
+                height: 58rpx;
+                line-height: 58rpx;
+                border-radius: 8rpx;
+                text-align: center;
+                background-color: #fff;
+            }
+        }
+
+        .page-detail-pet-gallery {
+            height: $pet-gallery-normal-height;
+            width: $pet-viewport-width;
+
+            .swiper-guide-wrap {
+                @include extends-viewport;
+                ::v-deep .swiper {
+                    height: $pet-viewport-height;
+                }
+
+                .pet-gallery-item {
+                    @include extends-viewport;
+                    img {
+                        @include extends-viewport;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .page-detail-pet-introduction {
+            position: fixed;
+            width: $pet-viewport-width;
+            height: $pet-introduction-normal-height;
+            bottom: 0;
+            background-color: #fff;
+            border-radius: 60rpx 60rpx 0 0;
+
+            .fake-drag-line {
+                width: 68rpx;
+                height: 4rpx;
+                border-radius: 4rpx;
+                background-color: rgb(165, 165, 165);
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, 28rpx);
+            }
+
+            .pet-title {
+                margin-top: 70rpx;
+                padding: 0 60rpx;
+                color: $app-light-main-text-color;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                text:first-child {
+                    font-size: 48rpx;
+                    font-family: $emphasized-content-font-family;
+                }
+                text:last-of-type {
+                    font-size: 48rpx;
+                    font-family: $main-content-font-family;
+                    // font-weight: 500;
+                }
+            }
+
+            .pet-properties {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                place-items: center;
+                gap: 20rpx;
+                margin: 50rpx 60rpx;
+
+                view {
+                    width: 100%;
+                    height: 146rpx;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10rpx;
+                    // border: 1px salmon solid;
+                    box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
+                    border-radius: 16rpx;
+
+                    text:first-child {
+                        color: $app-light-unimportant-text-color;
+                        font-size: 32rpx;
+                        font-family: $emphasized-content-font-family;
+                    }
+                    text:last-child {
+                        font-size: 26rpx;
+                        color: #B4AEAE;
+                        font-family: $main-content-font-family;
+                    }
+                }
+            }
+
+            .submit-action {
+                @include app-main-button;
+                position: absolute;
+                bottom: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}

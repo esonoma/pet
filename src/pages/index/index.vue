@@ -9,6 +9,9 @@
 		/>
 		<normal-category :categories="categories" :onClick="onItemClick" />
 	</view>
+	<view>
+		<button type="button" @tap="jumpToDetail">Jump to detail</button>
+	</view>
 	<!-- <fixed-top-bar /> -->
 </template>
 
@@ -43,6 +46,10 @@ const categories = reactive([
 
 function onItemClick(categoryProps) {
 	console.log(categoryProps);
+}
+
+function jumpToDetail() {
+	uni.navigateTo({ url: "/pages/detail/index" });
 }
 </script>
 

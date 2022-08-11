@@ -6,7 +6,8 @@
     { "path": "pages/message/index" },
     { "path": "pages/profile/index" },
     { "path": "pages/account/index" },
-    { "path" : "pages/guide/guide"}
+    { "path" : "pages/guide/guide"},
+    { "path": "pages/detail/index" }
   ],
   "globalStyle": {
     "navigationStyle": "custom"
