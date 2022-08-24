@@ -78,3 +78,7 @@ export function defineBind<C, T = Uni>(
 		setProperty(classInstance, property, bindFunc.bind(classInstance));
 	}
 }
+
+export function mergeObject<T = any>(...args: T[]): T {
+	return Object.assign({}, ...args);
+}
