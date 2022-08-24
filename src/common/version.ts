@@ -36,7 +36,7 @@ export default class AppVersionManager extends Eventemitter {
 
 	checker(
 		version: string,
-		specialCheckAction?: VersionActions.Upgrade,
+		specialCheckAction?: VersionActions,
 	): VersionCheckerResult {
 		if (this.version.version === version) {
 			if (specialCheckAction === VersionActions.Upgrade) {
