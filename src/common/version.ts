@@ -22,6 +22,7 @@ export type BaseUpgradeAndDowngradeHandler = (
 	previousVersion: VersionDefine,
 ) => void;
 
+// xxx： 可以抽像基础类出来
 export default class AppVersionManager extends Eventemitter {
 	version: VersionDefine = {
 		version: "1.0.0",
@@ -33,20 +34,30 @@ export default class AppVersionManager extends Eventemitter {
 		action: VersionActions.Nil,
 	};
 
-	checker(version: string): VersionCheckerResult {
+	checker(
+		version: string,
+		specialCheckAction?: VersionActions.Upgrade,
+	): VersionCheckerResult {
 		if (this.version.version === version) {
+			if (specialCheckAction === VersionActions.Upgrade) {
+				// todo
+			}
 			return {};
 		}
 		return {};
 	}
 
 	upgrade(version: string) {
+		this.checker(version, VersionActions.Upgrade);
+
 		// 升级版本号
 		this.emit(VersionActions.Upgrade, this.version, this.previous);
 		this.setPreviousVersion(this.version);
 	}
 
 	downgrade(version: string) {
+		this.checker(version, VersionActions.Downgrade);
+
 		this.emit(VersionActions.Downgrade, this.version, this.previous);
 		this.setPreviousVersion(this.previous);
 	}
