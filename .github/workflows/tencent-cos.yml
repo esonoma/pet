@@ -27,7 +27,7 @@ jobs:
       - name: inject env script
         env:
           FUNDEBUG_SHOP_APIKEY: ${{ secrets.FUNDEBUG_SHOP_APIKEY }}
-          PROD_SERVICE_URL: ${{ secrets.PROD_SERVICE_URL }}
+          SERVICE_URL: ${{ secrets.PROD_SERVICE_URL }}
         run: sh ./scripts/inject-env.sh
       
       - name: setup nodejs environment

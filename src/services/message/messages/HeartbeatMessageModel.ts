@@ -5,7 +5,7 @@ export class HeartbeatMessageModel extends BaseMessage {
 
 	static dispatchType = "heartbeat";
 
-	static registerHookName = "onHeartbeatMessage";
+	static registerHookName = "heartbeatMessage";
 
 	constructor(public form: string) {
 		super();

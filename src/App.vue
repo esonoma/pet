@@ -2,13 +2,8 @@
 import { onLaunch, onShow, onHide, onError } from "@dcloudio/uni-app";
 import { getUserInfoService } from "@domains/user.service";
 
-console.log("App.vue meta", import.meta);
-
 function startGuide(guideURL: string) {
-	uni.redirectTo({
-		url: guideURL,
-		success: () => uni.setStorageSync("guide_status", true),
-	});
+	uni.redirectTo({ url: guideURL });
 }
 async function startNewUserGuide() {
 	const guideStatus = uni.getStorageSync("guide_status");
@@ -73,4 +68,3 @@ onError(() => {
 	// 上传错误信息至监控平台
 });
 </script>
-<style></style>

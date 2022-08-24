@@ -1,0 +1,14 @@
+// custom fonts
+@font-face {
+    font-family: "PoppinsLight";
+    src: url("../../static/fonts/Poppins-Light.ttf");
+}
+
+@font-face {
+    font-family: "PoppinsMedium";
+    src: url("../../static/fonts/Poppins-Medium.ttf");
+}
+
+// main fonts define
+$main-content-font-family: "PoppinsLight";
+$emphasized-content-font-family: "PoppinsMedium";

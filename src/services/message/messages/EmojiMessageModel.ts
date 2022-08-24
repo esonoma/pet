@@ -5,7 +5,7 @@ export class EmojiMessageModel extends BaseMessage {
 
 	static dispatchType = "emoji";
 
-	static registerHookName = "onEmojiMessage";
+	static registerHookName = "emojiMessage";
 
 	constructor(
 		public from: string,

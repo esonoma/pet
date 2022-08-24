@@ -1,9 +1,21 @@
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
+import fs from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [uni()],
+	server: {
+		https: {
+			key: fs.readFileSync(
+				`${__dirname}/scripts/certificates/petapp-key.pem`,
+			),
+			cert: fs.readFileSync(
+				`${__dirname}/scripts/certificates/petapp.pem`,
+			),
+		},
+	},
+
 	resolve: {
 		alias: {
 			"@/*": "/src/*",

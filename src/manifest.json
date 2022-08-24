@@ -54,6 +54,8 @@
   /* 小程序特有相关 */
   "mp-weixin": {
     "appid": "",
+    // cli暂不支持
+    // "mergeVirtualHostAttributes": true,
     "setting": {
       "urlCheck": false
     },

@@ -1,10 +1,13 @@
 {
-  "titleNView": false, 
+  "titleNView": false,
   "pages": [
     { "path": "pages/index/index" },
+    { "path": "pages/community/index" },
+    { "path": "pages/message/index" },
+    { "path": "pages/profile/index" },
     { "path": "pages/account/index" },
-    { "path": "pages/test/index" },
-    { "path" : "pages/guide/guide"}
+    { "path" : "pages/guide/guide"},
+    { "path": "pages/detail/index" }
   ],
   "globalStyle": {
     "navigationStyle": "custom"
@@ -14,5 +17,25 @@
     "custom": {
       "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
     }
+  },
+  "tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/community/index",
+				"text": "社区"
+			},
+      {
+				"pagePath": "pages/message/index",
+				"text": "消息"
+			},
+      {
+				"pagePath": "pages/profile/index",
+				"text": "个人"
+			}
+		]
   }
 }

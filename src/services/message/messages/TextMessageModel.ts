@@ -6,7 +6,7 @@ export class TextMessageModel extends BaseMessage {
 
 	static dispatchType = "text";
 
-	static registerHookName = "onTextMessage";
+	static registerHookName = "textMessage";
 
 	constructor(
 		public form: string,

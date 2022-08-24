@@ -7,6 +7,7 @@ import {
 	TextMessageModel,
 	BinaryMessageModel,
 	EmojiMessageModel,
+	SessionMessageModel,
 } from "./messages";
 import { SendMessage } from "./SendMessage";
 import { ListenMessage } from "./ListenMessage";
@@ -28,6 +29,8 @@ export default class WebsocketClient
 			HeartbeatMessageModel.registerHookName,
 		[BinaryMessageModel.dispatchType]: BinaryMessageModel.registerHookName,
 		[EmojiMessageModel.dispatchType]: EmojiMessageModel.registerHookName,
+		[SessionMessageModel.dispatchType]:
+			SessionMessageModel.registerHookName,
 	};
 
 	// SendMessage 提供的标识符
@@ -150,5 +153,10 @@ export default class WebsocketClient
 	// onEmojiMessage (Emoji表情消息)
 	onEmojiMessage(callback: (message: EmojiMessageModel) => void) {
 		this.on(EmojiMessageModel.registerHookName, callback);
+	}
+
+	// onSessionMessage (会话消息)
+	onSessionMessage(callback: (message: SessionMessageModel) => void) {
+		this.on(SessionMessageModel.registerHookName, callback);
 	}
 }
