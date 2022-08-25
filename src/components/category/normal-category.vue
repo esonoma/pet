@@ -2,13 +2,21 @@
 	<view class="category-container">
 		<base-category :categories="categories">
 			<template #category="categoryProps">
-				<view class="category-item" @click="onClick(categoryProps)">
+				<view
+					class="category-item"
+					:class="{
+						'category-active-item':
+							activeId === categoryProps?.category?.id,
+					}"
+					@click="onClick(categoryProps)"
+				>
 					<responsive-image
-						width="60rpx"
-						height="60rpx"
+						width="46rpx"
+						height="46rpx"
 						:container-style="{
-							borderRadius: '30rpx',
+							borderRadius: '23rpx',
 							overflow: 'hidden',
+							marginRight: '8rpx',
 						}"
 						:visible="!!categoryProps.category.icon"
 						:image="categoryProps.category.icon"
@@ -23,8 +31,11 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import baseCategory from "./index.vue";
 import responsiveImage from "../image/responsive-image.vue";
+
+const activeId = ref(1);
 
 const props = defineProps({
 	categories: {
@@ -40,6 +51,7 @@ const props = defineProps({
 });
 
 function onClick(categoryProps) {
+	activeId.value = categoryProps?.category?.id;
 	if (props.onClick) {
 		props.onClick(categoryProps);
 	}
@@ -48,41 +60,29 @@ function onClick(categoryProps) {
 
 <style scoped lang="scss">
 .category-container {
-	margin: 30rpx 0;
 	display: flex;
-	// justify-content: space-between;
 	flex-wrap: wrap;
-	// grid-template-columns: repeat(3, 1fr);
 	gap: 16rpx;
 }
 
 .category-item {
 	display: flex;
 	align-items: center;
-	background-color: aliceblue;
-	padding: 8rpx 20rpx;
+	padding: 12rpx 16rpx;
 	border-radius: 40rpx;
-
-	.category-item-icon-box {
-		margin-right: 20rpx;
-		width: 60rpx;
-		height: 60rpx;
-		border-radius: 30rpx;
-		aspect-ratio: 1;
-		overflow: hidden;
-		// object-fit: cover;
-
-		.category-item-icon {
-			aspect-ratio: 1;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
+	background: #f8f7f7;
 	.category--item-name {
-		font-size: 28rpx;
+		font-family: $emphasized-content-font-family;
+		font-size: 24rpx;
 		color: rgb(64, 64, 61);
-		font-family: "PingFang SC", sans-serif;
+		font-weight: 500;
+	}
+}
+
+.category-active-item {
+	background: #827397;
+	.category--item-name {
+		color: #fff;
 	}
 }
 </style>

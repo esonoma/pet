@@ -68,3 +68,10 @@ onError(() => {
 	// 上传错误信息至监控平台
 });
 </script>
+
+<style lang="scss">
+body {
+	font-family: $main-content-font-family;
+	box-sizing: border-box;
+}
+</style>
