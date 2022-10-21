@@ -1,3 +1,6 @@
+> Unofficial <br />
+> The repository code is an unofficial version and cannot be used to generate environments
+
 # Assets
 
 -   [Figma PetApp](https://www.figma.com/file/n5SZZqQv4MOwD0W4CnSoMz/PetApp?node-id=0%3A1)
